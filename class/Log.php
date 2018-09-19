@@ -1,6 +1,6 @@
 <?php
 
-class Logger{
+class Log{
     public static function print($message, $type = 'message', $file = '-', $line = '-'){
         if(DEBUG == true){
             
