@@ -11,11 +11,14 @@ $controller_port = $_GET['hwc_port'];
 
 // Amazon Signature Parameters
 $amazon_signature = $_GET['X-Amz-Signature'];
-$amazon_algorithm = $_GET['X-Amz-Algorithm'];
 $amazon_credential = $_GET['X-Amz-Credential'];
 $amazon_date = $_GET['X-Amz-Date'];
+$amazon_algorithm = $_GET['X-Amz-Algorithm'];
 $amazon_expires = $_GET['X-Amz-Expires'];
 $amazon_signed_headers = $_GET['X-Amz-SignedHeaders'];
+
+$base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
+$url = $base_url . $_SERVER["REQUEST_URI"];
 
 $hidden_fields_array = array(
     'token' => $token,
@@ -28,7 +31,8 @@ $hidden_fields_array = array(
     'amazon_credential' => $amazon_credential,
     'amazon_date' => $amazon_date,
     'amazon_expires' => $amazon_expires,
-    'amazon_signed_headers' => $amazon_signed_headers  
+    'amazon_signed_headers' => $amazon_signed_headers,
+    'url' => $url  
 );
 
 $aux = json_encode($hidden_fields_array);
