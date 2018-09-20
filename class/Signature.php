@@ -27,7 +27,7 @@ class Signature {
         .$scope."\n"
         .hash('sha256', $canonicalized_request_string, FALSE);
 
-        $signingKey = generateSigningKey($scope);
+        $signingKey = Signature::generateSigningKey($scope);
 
         return hash_hmac('sha256', $stringToSign, $signingKey, FALSE);
     }
