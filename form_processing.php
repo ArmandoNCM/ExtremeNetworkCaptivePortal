@@ -2,6 +2,7 @@
 require_once(dirname(__FILE__).'/class/Log.php');
 require_once(dirname(__FILE__).'/class/Utils.php');
 require_once(dirname(__FILE__).'/class/Signature.php');
+require_once(dirname(__FILE__).'/class/SimpleAWS.php');
 
 $token = $_POST['token'];
 $username = $_POST['username'];
@@ -10,14 +11,25 @@ $amazon_credential = $_POST['amazon_credential'];
 $amazon_date = $_POST['amazon_date'];
 $url = $_POST['url'];
 
-$computed_signature = Signature::signUrl($url, $amazon_credential, $amazon_date);
 
-Log::print("Computed Signature: $computed_signature", "message", __FILE__, __LINE__);
+$simpleAWS = new SimpleAWS();
+
+$aux = $simpleAWS::verifyAwsUrlSignature($url);
+
+if (isset($aux)){
+    Log::print("Result: $aux", "message", __FILE__, __LINE__);
+} else {
+    Log::print("Nothing!", "error", __FILE__, __LINE__);
+}
+
+// $computed_signature = Signature::signUrl($url, $amazon_credential, $amazon_date);
+
+// Log::print("Computed Signature: $computed_signature", "message", __FILE__, __LINE__);
 
 
-$comparisonString = $amazon_signature == $computed_signature ? 'TRUE' : 'FALSE';
+// $comparisonString = $amazon_signature == $computed_signature ? 'TRUE' : 'FALSE';
 
-Log::print("Signatures Match: $comparisonString", "message", __FILE__, __LINE__);
+// Log::print("Signatures Match: $comparisonString", "message", __FILE__, __LINE__);
 
 
 ?>
