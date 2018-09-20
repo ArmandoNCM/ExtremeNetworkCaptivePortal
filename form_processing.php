@@ -2,7 +2,11 @@
 require_once(dirname(__FILE__).'/class/Log.php');
 require_once(dirname(__FILE__).'/class/Utils.php');
 
+Log::print("Running form_processing.php", "message", __FILE__, __LINE__);
+
 $approval_script_url = $_POST['approval_script_url'];
+
+Log::print("Approval URL: $approval_script_url", "message", __FILE__, __LINE__);
 
 $token = $_POST['token'];
 $username = $_POST['username'];
@@ -18,6 +22,7 @@ $queryParametersJson = json_encode($query_parameters);
 
 Log::print("Query Parameters of Approval HTTP GET:\n$queryParametersJson", "message", __FILE__, __LINE__);
 
+/*
 $response = Utils::perform_http_request('GET', $approval_script_url, $query_parameters);
 
 if (isset($response) && array_key_exists('response_code', $response)){
@@ -33,31 +38,9 @@ if (isset($response) && array_key_exists('response_code', $response)){
 } else {
     Log::print("Something went wrong making HTTP GET request", "error", __FILE__, __LINE__);
 }
+*/
 
 ?>
-
-<?php
-
-require_once(dirname(__FILE__).'/class/Log.php');
-
-$token = $_GET['token'];
-$access_point_mac = $_GET['bssid']; // VERY IMPORTANT
-$client_mac = $_GET['mac']; // VERY IMPORTANT
-$ssid = $_GET['ssid'];
-$controller_ip = $_GET['hwc_ip'];
-$controller_port = $_GET['hwc_port'];
-
-$approval_script_url = "http://" . $controller_ip . ":" . $controller_port . "/approval.php";
-
-
-$hidden_fields_array = array(
-    'token' => $token,
-    'filter' => 'CP_SPEEDWIAuthPolicy',
-    'approval_script_url' => $approval_script_url
-);
-
-?>
-
 
 <html>
 <head>

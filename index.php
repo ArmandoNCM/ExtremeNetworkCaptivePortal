@@ -36,17 +36,17 @@ $hidden_fields_array = array(
 
     <form action="form_processing.php" method="post">
 
-        <label for="field_username">Username</label>
-        <input id="field_username" type="text" name="username">
-        <br>
-        <input type="submit" value="Login">
-
         <!-- Hidden fields -->
         <?php
         foreach ($hidden_fields_array as $hidden_field => $value){
             echo "<input type='hidden' name='$hidden_field' value='$value'>";
         }
         ?>
+
+        <label for="field_username">Username</label>
+        <input id="field_username" type="text" name="username">
+        <br>
+        <input type="submit" value="Login">
 
     </form>
 </body>
