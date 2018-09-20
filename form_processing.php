@@ -14,7 +14,10 @@ $url = $_POST['url'];
 
 $simpleAWS = new SimpleAWS();
 
-$aux = $simpleAWS::verifyAwsUrlSignature($url);
+$keys = array(
+    'AudiTest' => 'ThisIsASharedSecret'
+);
+$aux = $simpleAWS::verifyAwsUrlSignature($url, $keys);
 
 if (isset($aux)){
     Log::print("Result: $aux", "message", __FILE__, __LINE__);

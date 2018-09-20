@@ -89,8 +89,7 @@ class SimpleAWS
             $host, $urlParams['path']);
         $stringToSign = "AWS4-HMAC-SHA256\n{$date}\n{$scope}\n" .
         hash('sha256', $canonical_request);
-        $signingKey = self::getSigningKey($credentAttrs[1], $credentAttrs[2],
-            $credentAttrs[3], $awsKeyPairs[$pKey]);
+        $signingKey = self::getSigningKey($credentAttrs[1], $credentAttrs[2],$credentAttrs[3], $awsKeyPairs[$pKey]);
         $mySign = hash_hmac('sha256', $stringToSign, $signingKey);
         if (strcmp($mySign, $sign)) {
             return self::AWS4_ERROR_INVALID_SIGNATURE;
