@@ -358,7 +358,7 @@ class SimpleAWS
         if ((80 != $ewc_port) && (443 != $ewc_port)) {
             $redirectUrl .= ":" . $ewc_port;
         }
-        $redirectUrl .= EWC_REDIRECT_TARGET
+        $redirectUrl .= SimpleAWS::EWC_REDIRECT_TARGET
             .'token=' . rawurlencode($token)
             .'&wlan=' . rawurlencode($wlanid)  
             .'&username=' . rawurlencode($username)
