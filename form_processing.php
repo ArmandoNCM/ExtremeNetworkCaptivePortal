@@ -1,7 +1,6 @@
 <?php
 require_once(dirname(__FILE__).'/class/Log.php');
 require_once(dirname(__FILE__).'/class/Utils.php');
-require_once(dirname(__FILE__).'/class/Signature.php');
 require_once(dirname(__FILE__).'/class/SimpleAWS.php');
 
 $token = $_POST['token'];
@@ -10,8 +9,6 @@ $amazon_signature = $_POST['amazon_signature'];
 $amazon_credential = $_POST['amazon_credential'];
 $amazon_date = $_POST['amazon_date'];
 $url = $_POST['url'];
-
-
 
 $keys = array(
     'AudiTest' => 'ThisIsASharedSecret'
@@ -23,16 +20,6 @@ if (isset($aux)){
 } else {
     Log::print("Nothing!", "error", __FILE__, __LINE__);
 }
-
-// $computed_signature = Signature::signUrl($url, $amazon_credential, $amazon_date);
-
-// Log::print("Computed Signature: $computed_signature", "message", __FILE__, __LINE__);
-
-
-// $comparisonString = $amazon_signature == $computed_signature ? 'TRUE' : 'FALSE';
-
-// Log::print("Signatures Match: $comparisonString", "message", __FILE__, __LINE__);
-
 
 ?>
 

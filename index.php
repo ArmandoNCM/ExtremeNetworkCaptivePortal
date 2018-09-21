@@ -9,14 +9,6 @@ $ssid = $_GET['ssid'];
 $controller_ip = $_GET['hwc_ip'];
 $controller_port = $_GET['hwc_port'];
 
-// Amazon Signature Parameters
-$amazon_signature = $_GET['X-Amz-Signature'];
-$amazon_credential = $_GET['X-Amz-Credential'];
-$amazon_date = $_GET['X-Amz-Date'];
-$amazon_algorithm = $_GET['X-Amz-Algorithm'];
-$amazon_expires = $_GET['X-Amz-Expires'];
-$amazon_signed_headers = $_GET['X-Amz-SignedHeaders'];
-
 $base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
 $url = $base_url . $_SERVER["REQUEST_URI"];
 
@@ -26,18 +18,8 @@ $hidden_fields_array = array(
     'client_mac' => $client_mac,
     'controller_ip' => $controller_ip,
     'controller_port' => $controller_port,
-    'amazon_signature' => $amazon_signature,
-    'amazon_algorithm' => $amazon_algorithm,
-    'amazon_credential' => $amazon_credential,
-    'amazon_date' => $amazon_date,
-    'amazon_expires' => $amazon_expires,
-    'amazon_signed_headers' => $amazon_signed_headers,
     'url' => $url  
 );
-
-$aux = json_encode($hidden_fields_array);
-
-Log::print("Received GET parameters:\n$aux", "message", __FILE__, __LINE__);
 
 ?>
 
