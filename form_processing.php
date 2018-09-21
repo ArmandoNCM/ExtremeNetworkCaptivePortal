@@ -15,7 +15,7 @@ $keys = array(
 $validationResult = SimpleAWS::getUrlValidationResult($url, $keys);
 Log::print($validationResult, "message", __FILE__, __LINE__);
 
-$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, FALSE, $token, $username, NULL, NULL, NULL, 3 * 60); 
+$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, FALSE, $token, $username, '1', NULL, "https://www.facebook.com/", 3 * 60); 
 
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, 'AudiTest', 'ThisIsASharedSecret', 'world', 'ecp', 30);
 
