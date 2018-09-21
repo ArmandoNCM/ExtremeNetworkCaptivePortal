@@ -8,6 +8,7 @@ $client_mac = $_GET['mac'];
 $ssid = $_GET['ssid'];
 $controller_ip = $_GET['hwc_ip'];
 $controller_port = $_GET['hwc_port'];
+$wlan_identifier = $_GET['wlan'];
 
 $base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
 $url = $base_url . $_SERVER["REQUEST_URI"];
@@ -18,6 +19,7 @@ $hidden_fields_array = array(
     'client_mac' => $client_mac,
     'controller_ip' => $controller_ip,
     'controller_port' => $controller_port,
+    'wlan_identifier' => $wlan_identifier,
     'url' => $url  
 );
 

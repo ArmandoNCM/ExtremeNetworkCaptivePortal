@@ -8,23 +8,30 @@ $username = $_POST['username'];
 $url = $_POST['url'];
 $controller_ip = $_POST['controller_ip'];
 $controller_port = $_POST['controller_port'];
+$wlanId = $_POST['wlan_identifier'];
+
+$identity = 'AudiTest';
+$shared_secret = 'ThisIsASharedSecret';
 
 $keys = array(
-    'AudiTest' => 'ThisIsASharedSecret'
+    $identity => $shared_secret
 );
 $validationResult = SimpleAWS::getUrlValidationResult($url, $keys);
 Log::print($validationResult, "message", __FILE__, __LINE__);
 
-$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, FALSE, $token, $username, '1', NULL, "https://www.facebook.com/", 3 * 60); 
+$useHttps = FALSE;
+$assigned_role = NULL;
+$destination = "https://www.google.com/";
+$session_time = 1 * 60;
 
-$signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, 'AudiTest', 'ThisIsASharedSecret', 'world', 'ecp', 30);
+$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlanId, $assigned_role, $destination, $session_time);
 
-$validationResult = SimpleAWS::getUrlValidationResult($signedUrl, $keys);
-Log::print("Second Validation: $validationResult", "message", __FILE__, __LINE__);
+$region = 'world';
+$service = 'ecp';
+$signature_expiration_time = 30;
 
-Log::print("Redirecting to: $signedUrl", "message", __FILE__, __LINE__);
+$signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
 
 header('Location: '.$signedUrl);
 exit();
-
 ?>
