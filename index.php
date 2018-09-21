@@ -21,6 +21,8 @@ $hidden_fields_array = array(
     'url' => $url  
 );
 
+Log::print("Showing Captive Portal to MAC: $client_mac", "message", __FILE__, __LINE__);
+
 ?>
 
 
