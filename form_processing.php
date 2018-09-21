@@ -5,32 +5,22 @@ require_once(dirname(__FILE__).'/class/SimpleAWS.php');
 
 $token = $_POST['token'];
 $username = $_POST['username'];
-$amazon_signature = $_POST['amazon_signature'];
-$amazon_credential = $_POST['amazon_credential'];
-$amazon_date = $_POST['amazon_date'];
 $url = $_POST['url'];
+$controller_ip = $_POST['controller_ip'];
+$controller_port = $_POST['controller_port'];
 
 $keys = array(
     'AudiTest' => 'ThisIsASharedSecret'
 );
-$aux = SimpleAWS::getUrlValidationResult($url, $keys);
+$validationResult = SimpleAWS::getUrlValidationResult($url, $keys);
 
-if (isset($aux)){
-    Log::print($aux, "message", __FILE__, __LINE__);
-} else {
-    Log::print("Nothing!", "error", __FILE__, __LINE__);
-}
+Log::print($validationResult, "message", __FILE__, __LINE__);
+
+$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, FALSE, $token, $username, NULL, NULL, NULL, 3 * 60); 
+
+$signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, 'AudiTest', 'ThisIsASharedSecret', 'world', 'ecp', 30);
+
+header('Location: '.$signedUrl);
+exit();
 
 ?>
-
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title><?php echo "Success" ?></title>
-</head>
-<body>
-    
-    <h1><?php echo "We're pleased to serve you!" ?></h1>
-
-</body>
-</html>
