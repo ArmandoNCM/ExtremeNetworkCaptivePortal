@@ -12,15 +12,14 @@ $amazon_date = $_POST['amazon_date'];
 $url = $_POST['url'];
 
 
-$simpleAWS = new SimpleAWS();
 
 $keys = array(
     'AudiTest' => 'ThisIsASharedSecret'
 );
-$aux = $simpleAWS::verifyAwsUrlSignature($url, $keys);
+$aux = SimpleAWS::getUrlValidationResult($url, $keys);
 
 if (isset($aux)){
-    Log::print("Result: $aux", "message", __FILE__, __LINE__);
+    Log::print($aux, "message", __FILE__, __LINE__);
 } else {
     Log::print("Nothing!", "error", __FILE__, __LINE__);
 }
