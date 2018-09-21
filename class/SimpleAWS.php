@@ -340,6 +340,10 @@ class SimpleAWS
         return SimpleAWS::getAwsError($eid);
     }
 
+    public static function is_not_empty($string) {
+        return (isset($string) && (0 < strlen($string)));
+    }
+
     /**
      * A method that assembles an unsigned URL out of the
      * the input from the user's succesful login
@@ -362,9 +366,9 @@ class SimpleAWS
             .'token=' . rawurlencode($token)
             .'&wlan=' . rawurlencode($wlanid)  
             .'&username=' . rawurlencode($username)
-            . (is_not_empty($dest) ? '&dest=' . rawurlencode($dest) : '')
-            . (is_not_empty($assigned_role) ? '&role=' . rawurlencode($assigned_role) : '')
-            . (is_not_empty($max_duration) ? '&opt27=' . $max_duration : '');
+            .(SimpleAWS::is_not_empty($dest) ? '&dest=' . rawurlencode($dest) : '')
+            .(SimpleAWS::is_not_empty($assigned_role) ? '&role=' . rawurlencode($assigned_role) : '')
+            .(SimpleAWS::is_not_empty($max_duration) ? '&opt27=' . $max_duration : '');
         return $redirectUrl;
     }
 }
