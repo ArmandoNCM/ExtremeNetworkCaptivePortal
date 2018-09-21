@@ -336,7 +336,7 @@ class SimpleAWS
      */
     public static function getUrlValidationResult($pUrl, $awsKeyPairs)
     {
-        $eid = SimpleAWS::verifyAwsUrlSignature($pUrl);
+        $eid = SimpleAWS::verifyAwsUrlSignature($pUrl, $awsKeyPairs);
         return SimpleAWS::getAwsError($eid);
     }
 
