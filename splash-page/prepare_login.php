@@ -68,7 +68,7 @@ if ($response && array_key_exists('response_code', $response)){
 /**
  * The Form Process URL
  */
-$html_form_process_url = '/splash-page/form_processing.php'; // TODO get this from API
+$html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_processing.php'; // TODO get this from API
 
 if (isset($hidden_fields_array)){
 
