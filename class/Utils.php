@@ -1,4 +1,6 @@
 <?php
+require_once(dirname(__FILE__).'/Log.php');
+
 class Tool {
 
     public static function perform_http_request($method, $url, $data = false)
