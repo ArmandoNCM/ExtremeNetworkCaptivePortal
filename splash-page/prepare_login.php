@@ -70,7 +70,7 @@ if ($response && array_key_exists('response_code', $response)){
  */
 $html_form_process_url = constant('PROJECT_URL') . 'splash-page/form_processing.php'; // TODO get this from API
 
-if (isset($html_form_hidden_fields_array) && $html_form_hidden_fields_array['res'] == 'notyet'){
+if (isset($html_form_hidden_fields_array)){
 
     if (isset($bypass_mac_lookup) && $bypass_mac_lookup){
         $html_page = 'full_login';
