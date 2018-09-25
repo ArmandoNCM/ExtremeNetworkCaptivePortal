@@ -12,7 +12,7 @@
     <meta charset="UTF-8">
     <title>Trinitip - Marketing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo constant('PROJECT_URL'); ?>splash-page/assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 <div class="container">
@@ -29,7 +29,7 @@
         </p>
 
         <div id="btn-container-down">
-            <a href="#login-form"><img src="<?php echo constant('PROJECT_URL'); ?>splash-page/assets/images/down.png"
+            <a href="#login-form"><img src="assets/images/down.png"
                                        class="btn-down"></a>
         </div>
     </div>
@@ -95,7 +95,7 @@
 
     <hr>
 
-    <a href="#tos"><img src="<?php echo constant('PROJECT_URL'); ?>splash-page/assets/images/down.png"
+    <a href="#tos"><img src="assets/images/down.png"
                         class="btn-down-footer"></a>
 
     <div id="tos">

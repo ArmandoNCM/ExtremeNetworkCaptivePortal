@@ -34,7 +34,7 @@ if ($response && array_key_exists('response_code', $response)){
 
 if (!isset($location_data_retrieved)){
     $html_location_name = 'Trinitip Store';
-    $html_location_logo_url = constant('PROJECT_URL') . 'splash-page/assets/images/logo.png';
+    $html_location_logo_url = 'assets/images/logo.png';
     $seconds_allowed = 5 * 60;
 }
 
@@ -68,7 +68,7 @@ if ($response && array_key_exists('response_code', $response)){
 /**
  * The Form Process URL
  */
-$html_form_process_url = constant('PROJECT_URL') . 'splash-page/form_processing.php'; // TODO get this from API
+$html_form_process_url = '/form_processing.php'; // TODO get this from API
 
 if (isset($hidden_fields_array)){
 

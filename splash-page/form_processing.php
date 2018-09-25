@@ -51,7 +51,7 @@ if ($response && array_key_exists('response_code', $response)){
 
 if (!isset($location_data_retrieved)){
     $html_location_name = 'Trinitip Store';
-    $html_location_logo_url = constant('PROJECT_URL') . 'splash-page/assets/images/logo.png';
+    $html_location_logo_url = 'assets/images/logo.png';
     $seconds_allowed = 5 * 60;
 }
 
