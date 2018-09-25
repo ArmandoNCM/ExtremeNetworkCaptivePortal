@@ -96,7 +96,7 @@ class SimpleAWS
             $port = $urlParams['port'];
         }
         $host = strtolower($urlParams['host']);
-        if ($port && (($urlParams['scheme'] == 'https' && $port != 443) || ($urlParams['scheme'] == 'http' && $port != 80))) {
+        if (isset($port) && $port && (($urlParams['scheme'] == 'https' && $port != 443) || ($urlParams['scheme'] == 'http' && $port != 80))) {
             $host .= ':' . $port;
         }
         $canonical_request = SimpleAWS::getCanonicalFFECPContent($q,$host, $urlParams['path']);
