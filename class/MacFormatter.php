@@ -6,11 +6,11 @@ class MacFormatter {
 
         $bytes = array();
 
-        $i = 2;
+        $i = 0;
         
-        while ($i < 6){
+        while ($i < 12){
 
-            $bytes[] = strtoupper(substr($mac, $i - 2, $i));
+            $bytes[] = strtoupper(substr($mac, $i, 2));
             $i = $i + 2;
         }
 
