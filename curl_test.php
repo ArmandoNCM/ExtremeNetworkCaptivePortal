@@ -22,15 +22,15 @@ if (isset($response)){
     print("\n\n");
 }
 
-if (isset($response) && array_key_exists('responseCode', $response)){
-    $responseCode = $response['responseCode'];
+if (isset($response) && array_key_exists('response_code', $response)){
+    $responseCode = $response['response_code'];
     if ($responseCode == 200){
-        $jsonBody = $response['responseBody'];
+        $jsonBody = $response['response_body'];
         $body = json_decode($jsonBody);
         $internetAvailable = $body->hasInternet;
     } else {
         print("Consumption of personCanAccessToInternet failed with HTTP Code: $responseCode"."\n");
-        print("Response Body: " . $response['responseBody']."\n");
+        print("Response Body: " . $response['response_body']."\n");
     }
 } else {
     print("Couldn't successfully consume 'ap/personCanAccessToInternet' WS"."\n");

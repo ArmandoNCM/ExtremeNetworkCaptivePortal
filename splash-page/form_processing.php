@@ -24,11 +24,11 @@ $queryParameters = array(
 );
 $response = Tool::perform_http_request('GET', $apiUrl, $queryParameters);
 
-if ($response && array_key_exists('responseCode', $response)){
-    $responseCode = $response['responseCode'];
+if ($response && array_key_exists('response_code', $response)){
+    $responseCode = $response['response_code'];
     if ($responseCode == 200){
 
-        $body = json_decode($response['responseBody']);
+        $body = json_decode($response['response_body']);
 
         $html_location_name = $body->location->name;
         $html_location_logo_url = $body->location->cover->url;
@@ -40,7 +40,7 @@ if ($response && array_key_exists('responseCode', $response)){
         
     } else {
         Log::print("Location Info query failed with HTTP Code: $responseCode", "error", __FILE__, __LINE__);
-        Log::print("Response Body: " . $response['responseBody'], "error", __FILE__, __LINE__);
+        Log::print("Response Body: " . $response['response_body'], "error", __FILE__, __LINE__);
     }
 } else {
     Log::print("Query of Location Info failed, couldn't successfully consume 'locationInfo' WS", "error", __FILE__, __LINE__);

@@ -48,15 +48,15 @@ $queryParameters = array(
 );
 $response = Tool::perform_http_request('GET', $apiUrl, $queryParameters);
 
-if (isset($response) && array_key_exists('responseCode', $response)){
-    $responseCode = $response['responseCode'];
+if (isset($response) && array_key_exists('response_code', $response)){
+    $responseCode = $response['response_code'];
     if ($responseCode == 200){
-        $jsonBody = $response['responseBody'];
+        $jsonBody = $response['response_body'];
         $body = json_decode($jsonBody);
         $internetAvailable = $body->hasInternet;
     } else {
         Log::print("Consumption of personCanAccessToInternet failed with HTTP Code: $responseCode", "error", __FILE__, __LINE__);
-        Log::print("Response Body: " . $response['responseBody'], "error", __FILE__, __LINE__);
+        Log::print("Response Body: " . $response['response_body'], "error", __FILE__, __LINE__);
     }
 } else {
     Log::print("Couldn't successfully consume 'ap/personCanAccessToInternet' WS", "error", __FILE__, __LINE__);
