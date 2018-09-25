@@ -22,7 +22,7 @@ Log::print($validationResult, "message", __FILE__, __LINE__);
 $useHttps = FALSE;
 $assigned_role = NULL;
 $destination = "https://www.google.com/";
-$session_time = 1 * 60;
+$session_time = 30 * 60;
 
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlanId, $assigned_role, $destination, $session_time);
 
