@@ -66,7 +66,7 @@
             </p>
 
             <?php
-            foreach ($html_form_hidden_fields_array as $key => $value) {
+            foreach ($hidden_fields_array as $key => $value) {
                 echo "<input type='hidden' name='$key' id='hfv-$key' value='$value' />";
             }
             echo "<input type='hidden' name='login_type' id='hfv-login_type' value='quick' />";
