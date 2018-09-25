@@ -15,6 +15,8 @@ $queryParameters = array(
     'nodeMac' => $access_point_mac
 );
 
+$url = $apiUrl;
+
 $method = 'GET';
 
 $data = $queryParameters;
