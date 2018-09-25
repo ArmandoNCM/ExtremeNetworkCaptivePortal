@@ -92,7 +92,9 @@ class SimpleAWS
             . $credentAttrs[3]
             ."/"
             .$credentAttrs[4];
-        $port = $urlParams['port'];
+        if (array_key_exists('port', $urlParams)){
+            $port = $urlParams['port'];
+        }
         $host = strtolower($urlParams['host']);
         if ($port && (($urlParams['scheme'] == 'https' && $port != 443) || ($urlParams['scheme'] == 'http' && $port != 80))) {
             $host .= ':' . $port;
