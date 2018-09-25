@@ -1,5 +1,5 @@
 <?php
-class Utils {
+class Tool {
 
     public static function perform_http_request($method, $url, $data = false)
     {

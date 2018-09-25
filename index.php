@@ -3,6 +3,7 @@
 require_once(dirname(__FILE__).'/class/Log.php');
 require_once(dirname(__FILE__).'/class/Utils.php');
 require_once(dirname(__FILE__).'/class/SimpleAWS.php');
+require_once(dirname(__FILE__).'/constants.php');
 
 $token = $_GET['token']; 
 $access_point_mac = $_GET['bssid'];

@@ -1,6 +1,7 @@
 <?php
 require_once(dirname(__FILE__).'/../class/Utils.php');
 require_once(dirname(__FILE__).'/../class/Log.php');
+require_once(dirname(__FILE__).'/../constants.php');
 
 $apiUrl = constant('API_URL') . 'ap/locationInfo';
 $queryParameters = array(
