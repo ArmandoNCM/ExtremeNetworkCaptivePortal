@@ -68,6 +68,7 @@ $signature_expiration_time = 30;
 
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
 
+$valid_fields = TRUE;
 
 if ($login_type == 'quick'){
 
@@ -94,7 +95,7 @@ if ($login_type == 'quick'){
         strtolower(trim($person_email));
     } else {
         Log::print("Error in the email validation.", "error", __FILE__, __LINE__);
-        $valid_fields = false;
+        $valid_fields = FALSE;
     }
 }
 
