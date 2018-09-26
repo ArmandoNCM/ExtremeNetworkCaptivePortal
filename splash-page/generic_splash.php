@@ -8,7 +8,7 @@ if (!isset($html_location_logo_url) || !$html_location_logo_url){
 }
 
 if (!isset($html_message_content) || !$html_message_content){
-    $html_message_content = "Gracias por usar nuestros servicios"
+    $html_message_content = "Gracias por usar nuestros servicios";
 }
 
 ?>
