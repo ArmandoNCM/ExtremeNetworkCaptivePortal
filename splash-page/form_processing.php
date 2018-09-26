@@ -63,11 +63,11 @@ if ($valid_fields) {
     $apiUrl = constant('API_URL') . 'ap/indoorEvents';
     $response = Tool::perform_http_request('POST', $apiUrl, json_encode($eventMessage));
 
-    if ($response && array_key_exists('responseCode', $response)){
-        $responseCode = $response['responseCode'];
+    if ($response && array_key_exists('response_code', $response)){
+        $responseCode = $response['response_code'];
         if ($responseCode == 200){
 
-            $body = json_decode($response['responseBody']);
+            $body = json_decode($response['response_body']);
 
             if ($body->isVerified){
                 // TODO do something
@@ -77,7 +77,7 @@ if ($valid_fields) {
             
         } else {
             Log::print("Creation of IN event failed with HTTP Code: $responseCode", "error", __FILE__, __LINE__);
-            Log::print("Response Body: " . $response['responseBody'], "error", __FILE__, __LINE__);
+            Log::print("Response Body: " . $response['response_body'], "error", __FILE__, __LINE__);
         }
     } else {
         Log::print("Creation of IN event failed, couldn't successfully consume 'indoorEvents' WS", "error", __FILE__, __LINE__);
