@@ -199,9 +199,11 @@ class SimpleAWS
         parse_str($urlParams['query'], $q);
         $q = array_merge($q, $awsParams);
         ksort($q);
-        $port = $urlParams['port'];
+        if (array_key_exists('port', $urlParams)){
+            $port = $urlParams['port'];
+        }
         $host = strtolower($urlParams['host']);
-        if ($port && (($urlParams['scheme'] == 'https' && $port != 443) || ($urlParams['scheme'] == 'http' && $port != 80))) {
+        if (isset($port) && (($urlParams['scheme'] == 'https' && $port != 443) || ($urlParams['scheme'] == 'http' && $port != 80))) {
             $host .= ':' . $port;
         }
         $canonical_request = SimpleAWS::getCanonicalFFECPContent($q, $host, $urlParams['path'], true);
