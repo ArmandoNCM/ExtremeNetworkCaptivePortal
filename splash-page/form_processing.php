@@ -64,8 +64,8 @@ if ($valid_fields) {
     $response = Tool::perform_http_request('POST', $apiUrl, json_encode($eventMessage));
 
     if ($response && array_key_exists('response_code', $response)){
-        $responseCode = $response['response_code'];
-        if ($responseCode == 200){
+        $response_code = $response['response_code'];
+        if ($response_code == 200){
 
             $body = json_decode($response['response_body']);
 
@@ -76,7 +76,7 @@ if ($valid_fields) {
             }
             
         } else {
-            Log::print("Creation of IN event failed with HTTP Code: $responseCode", "error", __FILE__, __LINE__);
+            Log::print("Creation of IN event failed with HTTP Code: $response_code", "error", __FILE__, __LINE__);
             Log::print("Response Body: " . $response['response_body'], "error", __FILE__, __LINE__);
         }
     } else {

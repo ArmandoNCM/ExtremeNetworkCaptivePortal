@@ -68,6 +68,36 @@ switch ($html_page){
     //     break;
 
     case 'grant_access':
+
+        $eventMessage = array(
+            'nodeMac' => $access_point_mac,
+            'mac' => $client_mac,
+            'eventType' => 'in'
+        );
+
+        $apiUrl = constant('API_URL') . 'ap/indoorEvents';
+        $response = Tool::perform_http_request('POST', $apiUrl, json_encode($eventMessage));
+
+        if ($response && array_key_exists('response_code', $response)){
+            $response_code = $response['response_code'];
+            if ($response_code == 200){
+
+                $body = json_decode($response['response_body']);
+
+                if ($body->isVerified){
+                    // TODO do something
+                } else {
+                    // TODO do something
+                }
+                
+            } else {
+                Log::print("Creation of IN event failed with HTTP Code: $response_code", "error", __FILE__, __LINE__);
+                Log::print("Response Body: " . $response['response_body'], "error", __FILE__, __LINE__);
+            }
+        } else {
+            Log::print("Creation of IN event failed, couldn't successfully consume 'indoorEvents' WS", "error", __FILE__, __LINE__);
+        }
+
         require_once(dirname(__FILE__) . '/' . 'grant_access.php');      
         break;
         
