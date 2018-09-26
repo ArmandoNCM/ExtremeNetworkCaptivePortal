@@ -10,63 +10,9 @@ $client_mac = $_POST['client_mac'];
 $access_point_mac = $_POST['access_point_mac'];
 $controller_ip = $_POST['controller_ip'];
 $controller_port = $_POST['controller_port'];
-$wlanId = $_POST['wlan_identifier'];
+$wlan_identifier = $_POST['wlan_identifier'];
 $login_type = $_POST['login_type'];
-
-$identity = 'AudiTest';
-$shared_secret = 'ThisIsASharedSecret';
-
-$keys = array(
-    $identity => $shared_secret
-);
-
-$apiUrl = constant('API_URL') . 'ap/locationInfo';
-$queryParameters = array(
-    'mac' => $access_point_mac
-);
-$response = Tool::perform_http_request('GET', $apiUrl, $queryParameters);
-
-if ($response && array_key_exists('response_code', $response)){
-    $responseCode = $response['response_code'];
-    if ($responseCode == 200){
-
-        $body = json_decode($response['response_body']);
-
-        $html_location_name = $body->location->name;
-        $html_location_logo_url = $body->location->cover->url;
-        $user_download_limit = $body->business->apSettings->download;
-        $user_upload_limit = $body->business->apSettings->upload;
-        $seconds_allowed = $body->business->apSettings->sessionSeconds;
-
-        $location_data_retrieved = TRUE;
-        
-    } else {
-        Log::print("Location Info query failed with HTTP Code: $responseCode", "error", __FILE__, __LINE__);
-        Log::print("Response Body: " . $response['response_body'], "error", __FILE__, __LINE__);
-    }
-} else {
-    Log::print("Query of Location Info failed, couldn't successfully consume 'locationInfo' WS", "error", __FILE__, __LINE__);
-}
-
-
-if (!isset($location_data_retrieved)){
-    $html_location_name = 'Trinitip Store';
-    $html_location_logo_url = 'assets/images/logo.png';
-    $seconds_allowed = 5 * 60;
-}
-
-$useHttps = FALSE;
-$assigned_role = NULL;
-$destination = "https://www.google.com/";
-$session_time = $seconds_allowed;
-
-$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlanId, $assigned_role, $destination, $session_time);
-
-$region = 'world';
-$service = 'ecp';
-$signature_expiration_time = 30;
-
-$signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
+$seconds_allowed = $_POST['seconds_allowed'];
 
 $valid_fields = TRUE;
 
@@ -136,9 +82,8 @@ if ($valid_fields) {
     } else {
         Log::print("Creation of IN event failed, couldn't successfully consume 'indoorEvents' WS", "error", __FILE__, __LINE__);
     }
-    
-    header('Location: '.$signedUrl);
+ 
+    require_once(dirname(__FILE__).'/grant_access.php');   
 }
 
-exit();
 ?>
