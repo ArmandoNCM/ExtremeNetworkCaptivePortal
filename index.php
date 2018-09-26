@@ -75,7 +75,7 @@ if (isset($location_data_retrieved) && $location_data_retrieved){
     }
     
     if (!isset($html_location_logo_url) || !$html_location_logo_url){
-        $html_location_logo_url = 'assets/images/logo.png';
+        $html_location_logo_url = '/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png';
     }
     
     if (!isset($seconds_allowed) || !$seconds_allowed){
