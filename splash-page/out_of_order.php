@@ -1,11 +1,19 @@
 <?php
-/**
- * This file need the php variables for the principal service, I put the default value, to make test or something like that
- * Julian Bohorquez
- * 25 de Apr 2018
- * 9:16 P.M
- */
+
+if (!isset($html_location_logo_url) || !$html_location_logo_url){
+    $html_location_logo_url = '/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png';
+}
+
 ?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Trinitip - Marketing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/ExtremeNetworksCaptivePortal/splash-page/assets/css/styles.css">
+</head>
+<body>
 
 <div class="container">
     <div id="login-container" class="succesful-container">
@@ -13,9 +21,13 @@
             <h1 id="business-name">Oops!</h1>
         </div>
 
-        <p id="main-text">
-           Location Out of Order
-        </p>
+        <img src="<?php echo $html_location_logo_url; ?>" id="logo">
 
+        <p id="main-text">
+            Location ouf of order
+        </p>
     </div>
 </div>
+
+</body>
+</html>
