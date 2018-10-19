@@ -31,8 +31,8 @@ $hidden_fields_array = array(
     'wlan_identifier' => $wlan_identifier
 );
 
-$identity = 'AudiTest';
-$shared_secret = 'ThisIsASharedSecret';
+$identity = constant('IDENTITY');
+$shared_secret = constant('SHARED_SECRET');
 
 $keys = array(
     $identity => $shared_secret

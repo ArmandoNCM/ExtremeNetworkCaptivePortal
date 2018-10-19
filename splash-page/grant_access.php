@@ -1,11 +1,9 @@
 <?php
 
-$identity = 'AudiTest';
-$shared_secret = 'ThisIsASharedSecret';
+require_once(dirname(__FILE__).'/../constants.php');
 
-$keys = array(
-    $identity => $shared_secret
-);
+$identity = constant('IDENTITY');
+$shared_secret = constant('SHARED_SECRET');
 
 $useHttps = FALSE;
 $assigned_role = NULL;
