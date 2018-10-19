@@ -37,7 +37,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             </p>
             <p>
                 <label for="txt-id-number">Documento de identificación</label>
-                <input type="text" class="form-control" name="id_number" id="txt-id-number" required>
+                <input type="number" class="form-control" name="id_number" id="txt-id-number" required>
             </p>
             <p>
                 <label for="txt-email">Correo electrónico</label>
@@ -49,23 +49,20 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             </p>
             <p>
                 <span>
-                    <input type="checkbox" class="form-control" id="tos-checkbox" required>
-                    Acepto los 
-                    <strong><a href="#tos">Términos y Condiciones</a></strong> y
-                    <strong><a href="#tos">Políticas de Privacidad</a></strong>
+                    <input style="display: inline" type="checkbox" class="form-control" id="tos-checkbox" required>
+                    <label for="tos-checkbox" style="display: inline">
+                        Acepto los 
+                        <strong><a href="#tos">Términos y Condiciones</a></strong>
+                        y
+                        <strong><a href="#tos">Políticas de Privacidad</a></strong>
+                    </label>
                 </span>
-            </p>
-
-            <p>
-                Al registrarme estoy de acuerdo con los <strong><a href="#tos">Términos y Condiciones</a></strong> y
-                <strong><a href="#tos">Políticas de Privacidad</a></strong> de Trinitip.
             </p>
 
             <?php
             foreach ($hidden_fields_array as $key => $value) {
                 echo "<input type='hidden' name='$key' id='hfv-$key' value='$value' />";
             }
-            echo "<input type='hidden' name='login_type' id='hfv-login_type' value='full' />";
             ?>
 
             <input type="submit" value="Conectar" class="btn-send">
