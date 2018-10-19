@@ -42,7 +42,7 @@ Log::print($validationResult, "message", __FILE__, __LINE__);
 
 $html_location_name = 'Trinitip Corferias';
 $html_location_logo_url = '/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png';
-$seconds_allowed = 5 * 60;
+$seconds_allowed = 60;
 
 $hidden_fields_array['seconds_allowed'] = $seconds_allowed;
 
