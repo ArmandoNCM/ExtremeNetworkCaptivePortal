@@ -49,7 +49,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             </p>
             <p>
                 <span>
-                    <input style="display: inline" type="checkbox" class="form-control" id="tos-checkbox" required>
+                    <input style="display: inline" type="checkbox" id="tos-checkbox" required>
                     <label for="tos-checkbox" style="display: inline">
                         Acepto los 
                         <strong><a href="#tos">Términos y Condiciones</a></strong>
