@@ -30,20 +30,14 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
     </div>
 
     <div id="login-form">
-        <?php
-        if (isset($isVerified) && !$isVerified){
-            echo '<h3 class="error-message">Por favor recuerde confirmar su dirección de correo</h3><br>';
-        }
-        ?>
         <form action="<?php echo $html_form_process_url; ?>" method="post">
-            <?php if (isset($html_error_message)): ?>
-                <div class="error-message">
-                    <strong>Error: </strong> <?php echo $html_error_message; ?>
-                </div>
-            <?php endif; ?>
             <p>
                 <label for="txt-name">Nombre</label>
                 <input type="text" class="form-control" name="name" id="txt-name" required>
+            </p>
+            <p>
+                <label for="txt-id-number">Documento de identificación</label>
+                <input type="text" class="form-control" name="id_number" id="txt-id-number" required>
             </p>
             <p>
                 <label for="txt-email">Correo electrónico</label>
@@ -54,21 +48,11 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
                 <input type="date" class="form-control" name="birthdate" id="txt-birthdate" required>
             </p>
             <p>
-		Género
-                <br>
                 <span>
-                    <input style="display: inline" type="radio" name="gender" id="gender-male" value="male" required>
-                    <label style="display: inline" for="gender-male">Masculino</label>
-                </span>
-                <br>
-                <span>
-                    <input style="display: inline" type="radio" name="gender" id="gender-female" value="female">
-                    <label style="display: inline" for="gender-female">Femenino</label>
-                </span>
-                <br>
-                <span>
-                    <input style="display: inline" type="radio" name="gender" id="gender-unspecified" value="unspecified">
-                    <label style="display: inline" for="gender-unspecified">Sin especificar</label>
+                    <input type="checkbox" class="form-control" id="tos-checkbox" required>
+                    Acepto los 
+                    <strong><a href="#tos">Términos y Condiciones</a></strong> y
+                    <strong><a href="#tos">Políticas de Privacidad</a></strong>
                 </span>
             </p>
 
