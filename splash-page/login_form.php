@@ -51,6 +51,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 		}
 
 		.form-control {
+            margin-top: 10px;
 			border: 0;
 			border-bottom: 1px solid #333;
 			width: 100%;
