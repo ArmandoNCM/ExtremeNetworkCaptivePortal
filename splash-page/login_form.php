@@ -25,16 +25,10 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             <h1 id="business-name"><?php echo $html_location_name; ?></h1>
         </div>
 
-        <img src="<?php echo $html_location_logo_url; ?>" id="logo">
-
         <p id="main-text">
             Conéctate gratis a nuestra red Wi-Fi.
         </p>
 
-        <div id="btn-container-down">
-            <a href="#login-form"><img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/down.png"
-                                       class="btn-down"></a>
-        </div>
     </div>
 
     <div id="login-form">
