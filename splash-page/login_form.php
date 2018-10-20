@@ -105,7 +105,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 	</div>
 
 	<div id="form-container">
-		<form action="<?php echo $html_form_process_url ?>">
+		<form action="<?php echo $html_form_process_url ?>" method="post">
 			<div class="form-group">
 				<span>Nombre</span>
 				<input name="name" type="text" class="form-control">
