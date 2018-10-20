@@ -43,7 +43,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 
 		.form-group span {
 			display: block;
-			font-size: 10px;
+			font-size: 14px;
 		}
 
 		.form-group input[type=text] {
