@@ -13,7 +13,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
     <script type="text/javascript" src="/ExtremeNetworksCaptivePortal/splash-page/assets/js/anypicker.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#txt-birthdate").AnyPicker({mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 01, 01),maxValue: new Date(2010, 12, 31)});
+            $("#txt-birthdate").AnyPicker({mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 00, 01),maxValue: new Date(2010, 11, 31),selectedDate: new Date(2000, 00, 01)});
         });
     </script>
 </head>
