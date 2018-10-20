@@ -25,7 +25,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 		#information {
 			text-align: center;
 			font-size: 15px;
-			margin-top: 10px;
+			margin-top: 30px;
 			margin-bottom: 20px;
 		}
 
