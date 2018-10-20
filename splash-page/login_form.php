@@ -4,7 +4,8 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 <!DOCTYPE html>
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Conexión Audi</title>
 	<style>
 		body {
@@ -13,7 +14,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 		}
 
 		#header {
-			background-image: url('https://audi-kiosk.firebaseapp.com/img/header-portal.png');
+			background-image: url('/ExtremeNetworksCaptivePortal/splash-page/assets/images/header-portal.png');
 			background-position: center;
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -87,7 +88,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 </head>
 <body>
 	<div id="header">
-		<img src="https://audi-kiosk.firebaseapp.com/img/logo-audi.png">
+		<img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo-audi.png">
 	</div>
 	<div id="information">
 		<span>Red Wi-Fi gratuita</span>
