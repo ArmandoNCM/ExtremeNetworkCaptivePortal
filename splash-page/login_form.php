@@ -4,115 +4,121 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Trinitip Corferias</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/ExtremeNetworksCaptivePortal/splash-page/assets/css/styles.css">
+	<meta charset="UTF-8">
+	<title>Conexión Audi</title>
+	<style>
+		body {
+			margin: 0;
+			font-family: Verdana, Geneva, sans-serif;
+		}
+
+		#header {
+			background-image: url('https://audi-kiosk.firebaseapp.com/img/header-portal.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover;
+			padding: 10px;
+			height: 150px;
+		}
+
+		#information {
+			text-align: center;
+			font-size: 15px;
+			margin-top: 10px;
+			margin-bottom: 20px;
+		}
+
+		#information span {
+			display: block;
+		}
+
+		#form-container {
+			padding: 10px;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		.form-group span {
+			display: block;
+			font-size: 10px;
+		}
+
+		.form-group input[type=text] {
+
+		}
+
+		.form-control {
+			border: 0;
+			border-bottom: 1px solid #333;
+			width: 100%;
+		}
+
+		.form-control:focus {
+			outline: none;
+		}
+
+		.btn-red {
+			background-color: #BB0A30;
+			width: 100%;
+			color: #fff;
+			border: 0;
+			padding: 10px;
+			font-size: 16px;
+			font-weight: 100;
+		}
+
+		.select-cities {
+			width: 100%;
+			height: 40px;
+			margin-top: 10px;
+		}
+
+		#terms {
+			text-align: center;
+			font-size: 12px;
+		}
+
+		#terms a {
+			color: #BB0A30;
+		}
+	</style>
 </head>
 <body>
-<div class="container">
+	<div id="header">
+		<img src="https://audi-kiosk.firebaseapp.com/img/logo-audi.png">
+	</div>
+	<div id="information">
+		<span>Red Wi-Fi gratuita</span>
+		<span>Completa el formulario y recibe contenido</span>
+		<span>exclusivo de nuestras marcas</span>
+	</div>
 
-    <div id="login-container" class="captive-portal">
-        <div id="header">
-            <h1 id="business-name"><?php echo $html_location_name; ?></h1>
-        </div>
-
-        <img src="<?php echo $html_location_logo_url; ?>" id="logo">
-
-        <p id="main-text">
-            Conéctate gratis a nuestra red Wi-Fi.
-        </p>
-
-        <div id="btn-container-down">
-            <a href="#login-form"><img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/down.png"
-                                       class="btn-down"></a>
-        </div>
-    </div>
-
-    <div id="login-form">
-        <form action="<?php echo $html_form_process_url; ?>" method="post">
-            <p>
-                <label for="txt-name">Nombre</label>
-                <input type="text" class="form-control" name="name" id="txt-name" required>
-            </p>
-            <p>
-                <label for="txt-id-number">Documento de identificación</label>
-                <input type="number" class="form-control" name="id_number" id="txt-id-number" required>
-            </p>
-            <p>
-                <label for="txt-email">Correo electrónico</label>
-                <input type="email" class="form-control" name="email" id="txt-email" required>
-            </p>
-            <p>
-                <label for="txt-birthdate">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="birthdate" id="txt-birthdate" required>
-            </p>
-            <p>
-                <span>
-                    <input style="display: inline" type="checkbox" id="tos-checkbox" required>
-                    <label for="tos-checkbox" style="display: inline">
-                        Acepto los 
-                        <strong><a href="#tos">Términos y Condiciones</a></strong>
-                        y
-                        <strong><a href="#tos">Políticas de Privacidad</a></strong>
-                    </label>
-                </span>
-            </p>
-
-            <?php
-            foreach ($hidden_fields_array as $key => $value) {
-                echo "<input type='hidden' name='$key' id='hfv-$key' value='$value' />";
-            }
-            ?>
-
-            <input type="submit" value="Conectar" class="btn-send">
-        </form>
-    </div>
-
-    <hr>
-
-    <a href="#tos"><img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/down.png"
-                        class="btn-down-footer"></a>
-
-    <div id="tos">
-        <h2>Términos y condiciones</h2>
-        <h3>CONTRATO DE USO DEL SERVICIO DE INTERNET GRATUITO</h3>
-        <h4>DEFINICIONES:</h4>
-
-        <p><strong>Trinitip SAS:</strong> Es una compañía encargada de suministrar una plataforma de servicios de
-            inteligencia de negocios, marketing, publicidad y comunicación a través del acceso a internet mediante Wifi
-            en diversos establecimientos comerciales en diversas ciudades de Colombia.
-        </p>
-        <p><strong>Usuario(s):</strong>Todo aquella persona que se encuentre dentro del establecimiento comercial y
-            aproximadamente a 60 metros a la redonda y con lÍnea de vista a los puntos de wifi de los establecimientos
-            aliados que se conecta al wifi que cuentan con el uso de la plataforma de Trinitip.</p>
-        <p><strong>Cliente(s):</strong>Toda compañía que con fin comercial que implemente la plataforma de Trinitip en
-            su establecimiento o que se promocione en la misma.</p>
-        <p><strong>El siguiente servicio se encuentra regido por las siguientes cláusulas:</strong></p>
-        <br>
-        <p><strong>PRIMERO:</strong>El servicio de Internet Patrocinado es gratuito, ya que Trinitip SAS, no cobra al
-            USUARIO que se encuentra dentro del Establecimiento Comercial ninguna tarifa anual o mensual por el acceso a
-            la plataforma personalizada para el Establecimiento Comercial.</p>
-        <p><strong>SEGUNDO:</strong>Como en una conexión a internet gratuita mediante Wifi, la velocidad de
-            transferencia de datos no puede ser garantizada por Trinitip SAS.</p>
-        <p><strong>TERCERO:</strong>Igualmente acepta de forma expresa y sin excepciones que el acceso y la utilización
-            de la plataforma personalizada del Establecimiento Comercial, es bajo su única y exclusiva responsabilidad.
-        </p>
-        <p><strong>CUARTO:</strong>Aunque Trinitip SAS, ha implementado todas las medidas para garantizar la seguridad,
-            no controla ni garantiza la ausencia de software malicioso, ni de otros elementos contenidos a los que
-            acceda el USUARIO durante la navegación en la web al estar conectado a la plataforma personalizada del
-            Establecimiento Comercial que puedan producir alteraciones en el sistema informático (equipos o programas)
-            del USUARIO. Trinitip SAS se exime de cualquier responsabilidad por los datos y perjuicios de toda
-            naturaleza que pueda deberse a la presencia de software malicioso en los contenidos que puedan producir
-            alteraciones en el sistema.</p>
-        <p><strong>QUINTO:</strong>Trinitip SAS pone a disposición de los usuarios y sus CLIENTES los sistemas de
-            privacidad de datos personales (Habeas Data) que impiden el acceso por parte de terceros. En ese sentido,
-            Trinitip SAS se exime de toda responsabilidad por los datos y por los perjuicios ocasionados en caso de que
-            se produzca dicho acceso.</p>
-        <p><strong>SEXTO:</strong>Si el USUARIO que se encuentra dentro del Establecimiento Comercial, no estuviera de
-            acuerdo con el contenido de estas condiciones generales de navegación, debe abandonar la plataforma Wifi de
-            Trinitip, sin poder acceder ni disponer de los servicios que se ofrecen.</p>
-    </div>
-</div>
+	<div id="form-container">
+		<form action="<?php echo $html_form_process_url ?>">
+			<div class="form-group">
+				<span>Nombre</span>
+				<input name="name" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<span>Correo electrónico</span>
+				<input name="email" type="email" class="form-control">
+			</div>
+			<div class="form-group">
+				<span>Teléfono</span>
+				<input  name="phone" type="tel" class="form-control">
+			</div>
+			<div class="form-group">
+				<span>Ciudad</span>
+				<select name="city" name="" id="" class="select-cities">
+					<option value="1">Bogotá</option>
+					<option value="2">Medellín</option>
+				</select>
+			</div>
+			<input type="submit" value="Conectarme" class="btn btn-red">
+		</form>
+	</div>
+	<p id="terms">Al registrarte, aceptas nuestros <a href="#">Términos y condiciones</a></p>
 </body>
 </html>

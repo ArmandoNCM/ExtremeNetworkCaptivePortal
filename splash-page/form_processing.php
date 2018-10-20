@@ -19,9 +19,10 @@ $person_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
 //Email Validation
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-$birthdate = filter_input(INPUT_POST, "birthdate", FILTER_SANITIZE_STRING);
-$identification_document = filter_input(INPUT_POST, "id_number", FILTER_SANITIZE_STRING);
-$identification_document = Tool::remove_non_numeric_characters($identification_document);
+$city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
+
+$phone = filter_input(INPUT_POST, "phone", FILTER_SANITIZE_STRING);
+$phone = Tool::remove_non_numeric_characters($phone);
 
 if ($person_email){
     strtolower(trim($person_email));
@@ -32,33 +33,16 @@ if ($person_email){
 
 if ($valid_fields) {
 
-    $bodyArray = array(
-        'mac' => $client_mac,
-        'idNumber' => $identification_document,
+    $dataArray = array(
         'name' => $person_name,
         'email' => $person_email,
-        'dob' => $birthdate
+        'phone' => $phone,
+        'city' => $city
     );
 
-    $bodyJson = json_encode($bodyArray);
+    $dataJson = json_encode($dataArray);
 
-    $apiUrl = constant('API_URL') . '/exhibition-forms/expo-students';
-    $apiResponse = Tool::perform_http_request('POST', $apiUrl, $bodyJson);
-    
-    if (isset($apiResponse) && array_key_exists('response_code', $apiResponse)){
-
-        if ($apiResponse['response_code'] == 201){
-            // Registry successful
-            Log::print("Successfully registered person on device with mac: $client_mac", 'message', __FILE__, __LINE__);
-        } else {
-            // Something went wrong
-            Log::print("Something went wrong trying to register person on device with mac: $client_mac\nThe service responded with HTTP Code: " . $apiResponse['response_code'], 'error', __FILE__, __LINE__);
-
-            Log::print("Response Body:\n\n" . $apiResponse['response_body'], 'debug', __FILE__, __LINE__);
-        }
-    } else {
-        Log::print("The person registry API could not be consumed", 'error', __FILE__, __LINE__);
-    }
+    Log::print("Granting access to person:\n\n$dataJson", 'message', __FILE__, __LINE__);
 
     require_once(dirname(__FILE__).'/grant_access.php');   
 }
