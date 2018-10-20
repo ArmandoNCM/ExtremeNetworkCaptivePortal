@@ -8,6 +8,14 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
     <title>Trinitip Corferias</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/ExtremeNetworksCaptivePortal/splash-page/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/ExtremeNetworksCaptivePortal/splash-page/assets/css/anypicker.css" />
+    <script type="text/javascript" src="/ExtremeNetworksCaptivePortal/splash-page/assets/js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="/ExtremeNetworksCaptivePortal/splash-page/assets/js/anypicker.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $("#txt-birthdate").AnyPicker({mode: "datetime",dateTimeFormat: "yyyy-MM-dd",});
+        });
+    </script>
 </head>
 <body>
 <div class="container">
@@ -45,7 +53,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             </p>
             <p>
                 <label for="txt-birthdate">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="birthdate" id="txt-birthdate" required>
+                <input type="text" class="form-control" name="birthdate" id="txt-birthdate" readonly required>
             </p>
             <p>
                 <span>
@@ -69,50 +77,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
         </form>
     </div>
 
-    <hr>
 
-    <a href="#tos"><img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/down.png"
-                        class="btn-down-footer"></a>
-
-    <div id="tos">
-        <h2>Términos y condiciones</h2>
-        <h3>CONTRATO DE USO DEL SERVICIO DE INTERNET GRATUITO</h3>
-        <h4>DEFINICIONES:</h4>
-
-        <p><strong>Trinitip SAS:</strong> Es una compañía encargada de suministrar una plataforma de servicios de
-            inteligencia de negocios, marketing, publicidad y comunicación a través del acceso a internet mediante Wifi
-            en diversos establecimientos comerciales en diversas ciudades de Colombia.
-        </p>
-        <p><strong>Usuario(s):</strong>Todo aquella persona que se encuentre dentro del establecimiento comercial y
-            aproximadamente a 60 metros a la redonda y con lÍnea de vista a los puntos de wifi de los establecimientos
-            aliados que se conecta al wifi que cuentan con el uso de la plataforma de Trinitip.</p>
-        <p><strong>Cliente(s):</strong>Toda compañía que con fin comercial que implemente la plataforma de Trinitip en
-            su establecimiento o que se promocione en la misma.</p>
-        <p><strong>El siguiente servicio se encuentra regido por las siguientes cláusulas:</strong></p>
-        <br>
-        <p><strong>PRIMERO:</strong>El servicio de Internet Patrocinado es gratuito, ya que Trinitip SAS, no cobra al
-            USUARIO que se encuentra dentro del Establecimiento Comercial ninguna tarifa anual o mensual por el acceso a
-            la plataforma personalizada para el Establecimiento Comercial.</p>
-        <p><strong>SEGUNDO:</strong>Como en una conexión a internet gratuita mediante Wifi, la velocidad de
-            transferencia de datos no puede ser garantizada por Trinitip SAS.</p>
-        <p><strong>TERCERO:</strong>Igualmente acepta de forma expresa y sin excepciones que el acceso y la utilización
-            de la plataforma personalizada del Establecimiento Comercial, es bajo su única y exclusiva responsabilidad.
-        </p>
-        <p><strong>CUARTO:</strong>Aunque Trinitip SAS, ha implementado todas las medidas para garantizar la seguridad,
-            no controla ni garantiza la ausencia de software malicioso, ni de otros elementos contenidos a los que
-            acceda el USUARIO durante la navegación en la web al estar conectado a la plataforma personalizada del
-            Establecimiento Comercial que puedan producir alteraciones en el sistema informático (equipos o programas)
-            del USUARIO. Trinitip SAS se exime de cualquier responsabilidad por los datos y perjuicios de toda
-            naturaleza que pueda deberse a la presencia de software malicioso en los contenidos que puedan producir
-            alteraciones en el sistema.</p>
-        <p><strong>QUINTO:</strong>Trinitip SAS pone a disposición de los usuarios y sus CLIENTES los sistemas de
-            privacidad de datos personales (Habeas Data) que impiden el acceso por parte de terceros. En ese sentido,
-            Trinitip SAS se exime de toda responsabilidad por los datos y por los perjuicios ocasionados en caso de que
-            se produzca dicho acceso.</p>
-        <p><strong>SEXTO:</strong>Si el USUARIO que se encuentra dentro del Establecimiento Comercial, no estuviera de
-            acuerdo con el contenido de estas condiciones generales de navegación, debe abandonar la plataforma Wifi de
-            Trinitip, sin poder acceder ni disponer de los servicios que se ofrecen.</p>
-    </div>
 </div>
 </body>
 </html>
