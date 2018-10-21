@@ -1,185 +1,57 @@
-/*-------------------------------
-General styles
---------------------------------*/
-
-/** {
-	outline: 1px solid red;
-}*/
-
-body {
-	margin: 30px;
-	font-family: Verdana, Geneva, sans-serif;
-	background-color: #f2f2f2;
-}
-
-.container {
-	background-color: #fff;
-	max-width: 500px;
-	height: auto;
+* {
 	margin: 0 auto;
+	font-family: Verdana, Geneva, sans-serif;
 }
 
-/*-------------------------------
-Header
---------------------------------*/
-
-#login-container {
-	background-color: #fff;
+#container {
+	background-image: url('/ExtremeNetworksCaptivePortal/splash-page/assets/images/background.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
 }
 
-#login-container #main-text {
-	/*display: table-cell;
-	vertical-align: middle;*/
+#logo {
+	max-width: 70%;
+	padding-top: 20px;
+	display: block;
+	text-align: center;
+	margin-bottom: 30px ;
 }
 
-#header {
-	background-size: 100% auto;
-	background-position: center;
-	/*background-color: #14172f;*/
-	height: 150px;
-}
-
-#login-container #logo {
-	max-width: 100px;
-    display: block;
-    height: auto;
-    text-align: center;
-    margin: 0 auto; 
-    margin-top: -52px;
-}
-
-#business-name {
+.form-container h1 {
 	text-align: center;
 	color: #fff;
-	padding-top: 30px;
 }
 
-.captive-portal #main-text {
-	padding: 20px;
-	color: #2d3436;
-	font-size: 1.5em;
-    text-align: justify;
-    line-height: 34px;
-    text-align: center;
-}
-
-#btn-container-down {
-	bottom: 0;
+.information {
+	padding: 5px;
+	color: #fff;
 	text-align: center;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 10px;
-	left: 0;
-	right: 0;
-}
-
-
-/*-------------------------------
-Form
---------------------------------*/
-
-#login-form {
-	margin: 0 auto;
-	text-align: center;
-	padding: 30px;
-	margin-bottom: 39px;
-}
-
-#login-form label {
-	display: block;
-	color: #b2bec3;
-	text-align: left;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 }
 
 .form-control {
-	width: 100%;
-	height: 30px;
-	border: 1px solid #b2bec3;
-	border-radius: 2px;
-	padding: 22px;
-	box-sizing: border-box;
-
-}
-
-.form-control:focus {
-	outline: none;
-}
-
-.btn-send {
+	width: 90%;
+	height: 35px;
 	display: block;
-	width: 100%;
-	background-color: #00bdd7;
-	font-size: 14px;
-	border: 0px;
-	padding: 10px;
-	box-sizing: border-box;
-	color: #323232;
+	margin-bottom: 10px;
 }
 
-.error-message {
-	background-color: #eb4d4b;
-	padding: 10px;
+.btn-blue {
+	background-color: #4567b5;
+	border: 0;
+	color: #fff;
+	display: block;
+	width: 90%;
+	margin: 0 auto;
+	height: 35px;
+	font-size: 15px;
+}
+
+#terms {
+	width: 90%;
 	color: #fff;
 	font-weight: 100;
-	font-size: 12px;
-	border-radius: 2px;
-}
-
-#accept-checkbox {
-	margin-botom:10px;
-	font-size: 12px;
-	color: #323232;
-}
-
-#accept-checkbox label {
-	display: inline-block !important;
-	color: #323232;
-}
-
-
-/*-------------------------------
-TOS
---------------------------------*/
-
-.btn-down-footer {
-	display: block;
-	margin: 0 auto;
-	margin-top: -29px;
-}
-
-#tos {
-	padding: 20px;
-	color: #2d3436;
-	line-height: 27px;
-	font-size: 14px;
-	text-align: justify;
-}
-
-#tos h2 {
-	text-align: center;
-}
-
-
-/*-------------------------------
-Succesful Page
---------------------------------*/
-
-.succesful-container {
-	height: auto !important;
-	padding-bottom: 20px;
-}
-
-.succesful-container #main-text {
-	text-align: center;
-	display: block;
-}
-
-.succesful-container .btn-send {
-	color: #fff;
-	text-align: center;
-	width: 60%;
-	margin: 0 auto;
-	display: block;
-	text-decoration: none;
+	margin-top: 10px;
 }
