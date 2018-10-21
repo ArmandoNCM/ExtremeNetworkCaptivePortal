@@ -12,9 +12,11 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
     <script type="text/javascript" src="/ExtremeNetworksCaptivePortal/splash-page/assets/js/jquery-1.11.1.min.js"></script>
     <script type="text/javascript" src="/ExtremeNetworksCaptivePortal/splash-page/assets/js/anypicker.js"></script>
     <script type="text/javascript">
-        $(document).ready(function(){
-            $("#birthdate-input").AnyPicker({mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 00, 01),maxValue: new Date(2010, 11, 31),selectedDate: new Date(2000, 00, 01)});
-        });
+        function setInitialDate(){
+            var pickerObject;
+            $("#birthdate-input").AnyPicker({onInit: function(){pickerObject = this;},mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 00, 01),maxValue: new Date(2010, 11, 31),selectedDate: new Date(2000, 00, 01)});
+            pickerObject.showOrHidePicker();
+        };
     </script>
 </head>
 <body>
@@ -27,7 +29,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             <form method="post" action="<?php echo $html_form_process_url ?>">
                 <input name="name" type="text" class="form-control" placeholder="Nombre y apellidos" required>
                 <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
-                <input id="birthdate-input" name="birthdate" type="text" class="form-control" placeholder="Fecha de nacimiento" required readonly>
+                <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control" placeholder="Fecha de nacimiento" required readonly>
                 <input name="id_number" type="number" class="form-control" placeholder="Documento de identidad" required>
                 <input type="submit" class="btn btn-blue">
                 
