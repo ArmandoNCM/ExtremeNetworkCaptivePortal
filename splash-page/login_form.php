@@ -40,6 +40,13 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 					<option value="2">Medellín</option>
 				</select>
 			</div>
+
+			<?php
+			foreach ($hidden_fields_array as $key => $value) {
+				echo "<input type='hidden' name='$key' id='hfv-$key' value='$value' />";
+			}
+			?>
+
 			<input type="submit" value="Conectarme" class="btn btn-red">
 		</form>
 	</div>
