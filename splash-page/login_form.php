@@ -5,7 +5,8 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/ExtremeNetworksCaptivePortal/splash-page/assets/css/styles.css">
 	<title>Conexión Audi</title>
 </head>
 <body>
