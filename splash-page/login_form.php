@@ -22,7 +22,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 <body>
 	<div id="container">
 		<img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png" id="logo">
-		<div class="form-container">
+		<div class="form-container col-5">
 			<h1>Bienvenido</h1>
             <p class="information">Conéctate gratis a nuestra red Wi-Fi en 4 simples pasos</p>
             
@@ -39,7 +39,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
                 }
                 ?>
 
-                <div id="terms">
+                <div id="terms" align="center">
                     <input type="checkbox" id="btn-terms" required> <label for="btn-terms">Acepto términos, condiciones, y políticas de privacidad</label>
                 </div>
             </form>
