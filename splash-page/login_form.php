@@ -38,10 +38,11 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
                     echo "<input type='hidden' name='$key' id='hfv-$key' value='$value' />";
                 }
                 ?>
+
+                <div id="terms">
+                    <input type="checkbox" id="btn-terms" required> <label for="btn-terms">Acepto términos, condiciones, y políticas de privacidad</label>
+                </div>
             </form>
-		</div>
-		<div id="terms">
-			<input type="checkbox" id="btn-terms" required> <label for="btn-terms">Acepto términos, condiciones, y políticas de privacidad</label>
 		</div>
 	</div>
 </body>
