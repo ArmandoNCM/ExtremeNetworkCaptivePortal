@@ -1,7 +1,7 @@
 <?php
 require_once(dirname(__FILE__).'/../class/Log.php');
 require_once(dirname(__FILE__).'/../class/Utils.php');
-require_once(dirname(__FILE__).'/../class/SimpleAWS.php');
+require_once(dirname(__FILE__).'/../lib/phpqrcode/qrlib.php');
 require_once(dirname(__FILE__).'/../constants.php');
 
 $token = $_POST['token'];
@@ -34,13 +34,27 @@ if ($person_email){
 if ($valid_fields) {
 
     $dataArray = array(
-        'name' => $person_name,
         'email' => $person_email,
-        'phone' => $phone,
-        'city' => $city
+        'phone' => $phone
     );
 
     $dataJson = json_encode($dataArray);
+
+    $qrCodeContent = $dataJson;
+    $qrCodePath = uniqid(hash('md5', $qrCodeContent)) . '.png';
+    QRcode::png($qrCodeContent, $qrCodePath); 
+    $data = file_get_contents($qrCodePath);
+    // unlink($qrCodePath);
+    $base64QrCode = base64_encode($data);
+    
+    $dataArray['city'] = $city;
+    $dataArray['name'] = $person_name;
+    $dataArray['mac'] = $client_mac;
+    $dataArray['qrCode'] = $base64QrCode;
+
+    $dataJson = json_encode($dataArray);
+
+    // TODO consume WS sending information
 
     Log::print("Granting access to person:\n\n$dataJson", 'message', __FILE__, __LINE__);
 

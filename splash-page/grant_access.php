@@ -1,5 +1,5 @@
 <?php
-
+require_once(dirname(__FILE__).'/../class/SimpleAWS.php');
 require_once(dirname(__FILE__).'/../constants.php');
 
 $identity = constant('IDENTITY');
@@ -19,6 +19,9 @@ $signature_expiration_time = 30;
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
 
 header('Location: '.$signedUrl);
+header("Content-Disposition: attachment; filename=\"" . basename($qrCodePath) . "\"");
+header("Content-Length: " . filesize($qrCodePath));
+header("Content-Type: application/octet-stream");
 
 exit();
 
