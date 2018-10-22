@@ -19,9 +19,9 @@ $signature_expiration_time = 30;
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
 
 header('Location: '.$signedUrl);
-header("Content-Disposition: attachment; filename=\"" . basename($qrCodePath) . "\"");
-header("Content-Length: " . filesize($qrCodePath));
 header("Content-Type: application/octet-stream");
+header('Content-Disposition: attachment; filename="' . basename($qrCodePath) . '"');
+@readfile($qrCodePath); 
 
 exit();
 
