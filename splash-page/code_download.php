@@ -1,14 +1,14 @@
 <?php
 
 $qrCodeName = $_GET['code'] . '.png';
-$qrCodePath = '/opt/qrCode/' . $qrCodeName;
+$qrCodePath = '/opt/qrCodes/' . $qrCodeName;
 
 if (file_exists($qrCodePath)){
     header("Content-Type: image/png");
-    header('Content-Disposition: attachment; filename="' . $qrCodeName . '"');
+    header('Content-Disposition: attachment; filename="' . basename($qrCodeName) . '"');
     @readfile($qrCodePath); 
 } else {
-    http_response_code(402);
+    http_response_code(400);
 }
 
 ?>
