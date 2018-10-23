@@ -12,6 +12,16 @@ $controller_port = $_POST['controller_port'];
 $wlan_identifier = $_POST['wlan_identifier'];
 $seconds_allowed = $_POST['seconds_allowed'];
 
+$apiUrl = constant('API_URL') . '/exhibition-forms/expo-students/exists/' . $client_mac;
+$apiResponse = Tool::perform_http_request('GET', $apiUrl);
+
+$alreadyRegistered = (isset($apiResponse) && array_key_exists('response_code', $apiResponse) && $apiResponse['response_code'] == 204);
+
+if (isset($alreadyRegistered) && $alreadyRegistered) {
+    header('Location: /ExtremeNetworksCaptivePortal/splash-page/out_of_order.html');
+    exit();
+}
+
 $valid_fields = TRUE;
 
 // TODO Check name and email and in case of error, show form with error and retry
