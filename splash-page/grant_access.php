@@ -1,5 +1,6 @@
 <?php
 require_once(dirname(__FILE__).'/../class/SimpleAWS.php');
+require_once(dirname(__FILE__).'/../class/Log.php');
 require_once(dirname(__FILE__).'/../constants.php');
 
 $identity = constant('IDENTITY');
@@ -10,7 +11,8 @@ $assigned_role = NULL;
 $destination = 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/code_download.php?code=' . urlencode($qrCodeName);
 $session_time = $seconds_allowed;
 
-$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlan_identifier, $assigned_role, $destination, $session_time);
+Log::print('Destination URL: $destination', 'debug', __FILE__, __LINE__);
+$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $person_email, $wlan_identifier, $assigned_role, $destination, $session_time);
 
 $region = 'world';
 $service = 'ecp';
