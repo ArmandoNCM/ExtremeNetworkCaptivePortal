@@ -41,7 +41,8 @@ if ($valid_fields) {
     $dataJson = json_encode($dataArray);
 
     $qrCodeContent = $dataJson;
-    $qrCodePath = '/opt/qrCodes/' . uniqid(hash('md5', $qrCodeContent)) . '.png';
+    $qrCodeName = uniqid(hash('md5', $qrCodeContent));
+    $qrCodePath = '/opt/qrCodes/' . $qrCodeName . '.png';
     QRcode::png($qrCodeContent, $qrCodePath); 
     $data = file_get_contents($qrCodePath);
     // unlink($qrCodePath);

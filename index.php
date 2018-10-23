@@ -46,17 +46,6 @@ $seconds_allowed = 60;
 
 $hidden_fields_array['seconds_allowed'] = $seconds_allowed;
 
-$apiUrl = constant('API_URL') . '/exhibition-forms/expo-students/exists/' . $client_mac;
-$apiResponse = Tool::perform_http_request('GET', $apiUrl);
-
-$alreadyRegistered = (isset($apiResponse) && array_key_exists('response_code', $apiResponse) && $apiResponse['response_code'] == 204);
-
-if (isset($alreadyRegistered) && $alreadyRegistered) {
-    Log::print("New Login attempt by the person device with mac: $client_mac BLOCKED", "message", __FILE__, __LINE__);
-    require_once(dirname(__FILE__).'/splash-page/out_of_order.php');
-} else {
-    require_once(dirname(__FILE__).'/splash-page/login_form.php');
-}
-
+require_once(dirname(__FILE__).'/splash-page/login_form.php');
 
 ?>
