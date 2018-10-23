@@ -30,12 +30,12 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 			<h1>Bienvenido</h1>
             <p class="information">Conéctate gratis a nuestra red Wi-Fi en 4 simples pasos</p>
             
-            <form method="post" action="<?php echo $html_form_process_url ?>">
+            <form method="post" onsubmit="disableButton()" action="<?php echo $html_form_process_url ?>">
                 <input name="name" type="text" class="form-control" placeholder="Nombre y apellidos" required>
                 <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
                 <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control" placeholder="Fecha de nacimiento" required readonly>
                 <input name="id_number" type="number" class="form-control" placeholder="Documento de identidad" required>
-                <input id="submit-button" onclick="disableButton()" type="submit" class="btn btn-blue">
+                <input id="submit-button" type="submit" class="btn btn-blue">
                 
                 <?php
                 foreach ($hidden_fields_array as $key => $value) {
