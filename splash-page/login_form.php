@@ -14,7 +14,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
     <script type="text/javascript">
         function setInitialDate(){
             var pickerObject;
-            $("#birthdate-input").AnyPicker({onInit: function(){pickerObject = this;},mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 00, 01),maxValue: new Date(2010, 11, 31),selectedDate: new Date(2000, 00, 01)});
+            $("#birthdate-input").AnyPicker({onInit: function(){pickerObject = this;},mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 00, 01),maxValue: new Date(2010, 11, 31),selectedDate: new Date(2000, 00, 30)});
             pickerObject.showOrHidePicker();
         };
 
