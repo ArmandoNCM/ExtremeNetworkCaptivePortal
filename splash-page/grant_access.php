@@ -11,7 +11,7 @@ $assigned_role = NULL;
 $destination = 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/code_download.php?code=' . urlencode($qrCodeName);
 $session_time = $seconds_allowed;
 
-Log::print('Destination URL: $destination', 'debug', __FILE__, __LINE__);
+Log::print('Destination URL: ' . $destination, 'debug', __FILE__, __LINE__);
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $person_email, $wlan_identifier, $assigned_role, $destination, $session_time);
 
 $region = 'world';
