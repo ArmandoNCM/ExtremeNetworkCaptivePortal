@@ -18,9 +18,9 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             pickerObject.showOrHidePicker();
         };
 
-        document.getElementById("submit-button").onclick = function() {
-            this.disabled = true;
-        };
+        function disableButton(){
+            document.getElementById("submit-button").disabled = true;
+        }
     </script>
 </head>
 <body>
@@ -35,7 +35,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
                 <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
                 <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control" placeholder="Fecha de nacimiento" required readonly>
                 <input name="id_number" type="number" class="form-control" placeholder="Documento de identidad" required>
-                <input id="submit-button" type="submit" class="btn btn-blue">
+                <input id="submit-button" onclick="disableButton()" type="submit" class="btn btn-blue">
                 
                 <?php
                 foreach ($hidden_fields_array as $key => $value) {
