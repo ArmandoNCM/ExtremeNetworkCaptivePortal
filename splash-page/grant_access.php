@@ -7,7 +7,7 @@ $shared_secret = constant('SHARED_SECRET');
 
 $useHttps = FALSE;
 $assigned_role = NULL;
-$destination = "https://www.google.com/";
+$destination = "https://www.tarjetajoven.com/";
 $session_time = $seconds_allowed;
 
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlan_identifier, $assigned_role, $destination, $session_time);
