@@ -7,7 +7,7 @@ $shared_secret = constant('SHARED_SECRET');
 
 $useHttps = FALSE;
 $assigned_role = NULL;
-$destination = 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/code_download.php?code=' . $qrCodeName;
+$destination = 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/code_download.php?code=' . urlencode($qrCodeName);
 $session_time = $seconds_allowed;
 
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlan_identifier, $assigned_role, $destination, $session_time);
