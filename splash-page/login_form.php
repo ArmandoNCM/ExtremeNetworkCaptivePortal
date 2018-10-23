@@ -17,6 +17,10 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
             $("#birthdate-input").AnyPicker({onInit: function(){pickerObject = this;},mode: "datetime",dateTimeFormat: "yyyy-MM-dd",minValue: new Date(1940, 00, 01),maxValue: new Date(2010, 11, 31),selectedDate: new Date(2000, 00, 01)});
             pickerObject.showOrHidePicker();
         };
+
+        document.getElementById("submit-button").onclick = function() {
+            this.disabled = true;
+        };
     </script>
 </head>
 <body>
@@ -31,7 +35,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
                 <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
                 <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control" placeholder="Fecha de nacimiento" required readonly>
                 <input name="id_number" type="number" class="form-control" placeholder="Documento de identidad" required>
-                <input type="submit" class="btn btn-blue">
+                <input id="submit-button" type="submit" class="btn btn-blue">
                 
                 <?php
                 foreach ($hidden_fields_array as $key => $value) {
