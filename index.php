@@ -46,6 +46,13 @@ $seconds_allowed = 60;
 
 $hidden_fields_array['seconds_allowed'] = $seconds_allowed;
 
-require_once(dirname(__FILE__).'/splash-page/login_form.php');
-
+if (array_key_exists('chrome', $_GET)){
+    // Opened in Chrome
+    Log::print('YYYYYY', 'debug', __FILE__, __LINE__);
+    require_once(dirname(__FILE__).'/splash-page/login_form.php');
+} else {
+    // Opened in default web view
+    Log::print('NNNNNN', 'debug', __FILE__, __LINE__);
+    header('Location: googlechrome://navigate?url=' . $url);
+}
 ?>
