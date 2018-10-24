@@ -20,7 +20,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 	</div>
 
 	<div id="form-container">
-		<h1><a href="googlechrome://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/test.html">Test</a></h1>
+		<h1><a href="googlechrome://navigate?url=http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/test.html">Test</a></h1>
 	</div>
 </body>
 </html>
