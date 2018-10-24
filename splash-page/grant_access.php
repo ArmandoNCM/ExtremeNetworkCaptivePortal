@@ -8,7 +8,7 @@ $shared_secret = constant('SHARED_SECRET');
 
 $useHttps = FALSE;
 $assigned_role = NULL;
-$destination = 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/code_download.php?code=' . urlencode($qrCodeName);
+$destination = 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/qrCodes/' . $qrCodeName . '.png';
 $session_time = $seconds_allowed;
 
 Log::print('Destination URL: ' . $destination, 'debug', __FILE__, __LINE__);
