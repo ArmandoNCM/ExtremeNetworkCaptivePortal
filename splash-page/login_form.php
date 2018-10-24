@@ -20,47 +20,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 	</div>
 
 	<div id="form-container">
-		<form action="<?php echo $html_form_process_url ?>" method="post">
-			<div class="form-group">
-				<span>Nombre</span>
-				<input name="name" type="text" class="form-control">
-			</div>
-			<div class="form-group">
-				<span>Correo electrónico</span>
-				<input name="email" type="email" class="form-control">
-			</div>
-			<div class="form-group">
-				<span>Teléfono</span>
-				<input  name="phone" type="tel" class="form-control">
-			</div>
-			<div class="form-group">
-				<span>Ciudad</span>
-				<select name="city" name="" id="" class="select-cities">
-					<option value="1">Bogotá</option>
-					<option value="2">Medellín</option>
-				</select>
-			</div>
-
-			<?php
-			foreach ($hidden_fields_array as $key => $value) {
-				echo "<input type='hidden' name='$key' id='hfv-$key' value='$value' />";
-			}
-			?>
-
-			<input type="submit" value="Conectarme" class="btn btn-red">
-		</form>
+		<h1><a href="googlechrome://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/splash-page/test.html">Test</a></h1>
 	</div>
-    <p id="terms">Al registrarte, aceptas nuestros <a href="#tos">Términos y condiciones</a></p>
-    
-    <p id="tos">
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare orci et purus dignissim finibus. Mauris facilisis eros quam, quis laoreet nibh porta eu. Nullam lacinia mattis sollicitudin. Ut lobortis tellus ultricies iaculis suscipit. Sed nec scelerisque turpis, vitae mollis neque. Sed dictum mauris quis quam congue ullamcorper. Aliquam vitae vehicula dui. Quisque nec molestie dui, nec rhoncus purus.
-        <br>
-        <br>
-        Vestibulum sit amet volutpat odio. Vivamus vestibulum lectus fermentum, scelerisque nulla ut, volutpat ante. Nunc accumsan finibus orci at auctor. Aliquam erat volutpat. Aenean in metus eget lectus vulputate maximus id nec velit. Praesent faucibus nisl sit amet eros suscipit tempor. Duis molestie scelerisque augue nec faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec hendrerit augue placerat odio commodo, nec dictum orci fermentum. Sed id leo pharetra, volutpat nunc eu, auctor ligula.
-        <br>
-        <br>
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In diam libero, scelerisque placerat vulputate in, mollis eget nisi. Nunc laoreet ante est, et porta sapien volutpat ut. Nunc eu purus maximus, finibus eros sed, dignissim erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eget finibus elit. Ut in dolor sit amet lectus consequat faucibus vitae at elit. Donec laoreet ante vitae augue imperdiet fermentum. Etiam consequat lorem a nisi tincidunt, sed vehicula enim tempus.
-    </p>
 </body>
 </html>
