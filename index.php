@@ -18,6 +18,7 @@ $wlan_identifier = $_GET['wlan'];
 
 Log::print("Redirecting unauthenticated traffic by MAC: $client_mac", "message", __FILE__, __LINE__);
 
+Log::print($_SERVER['HTTP_USER_AGENT'], 'browser-agent', __FILE__, __LINE__);
 $browserData = get_browser(NULL, TRUE);
 $browser = $browserData['browser'];
 $platform = $browserData['platform'];
