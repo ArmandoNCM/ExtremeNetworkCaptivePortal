@@ -18,6 +18,11 @@ $wlan_identifier = $_GET['wlan'];
 
 Log::print("Redirecting unauthenticated traffic by MAC: $client_mac", "message", __FILE__, __LINE__);
 
+$browserData = get_browser(NULL, TRUE);
+$browser = $browserData['browser'];
+$platform = $browserData['platform'];
+Log::print("Browser and Platform: $browser & $platform", "info", __FILE__, __LINE__);
+
 // Get redirected URL
 $base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
 $url = $base_url . $_SERVER["REQUEST_URI"] . '&chrome=true';
