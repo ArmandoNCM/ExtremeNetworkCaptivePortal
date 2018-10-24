@@ -54,6 +54,7 @@ if ($valid_fields) {
     $dataArray['name'] = $person_name;
     $dataArray['mac'] = $client_mac;
     $dataArray['qrCode'] = $base64QrCode;
+    $dataArray['trafficSource'] = 'captive-portal';
 
     $dataJson = json_encode($dataArray);
 
