@@ -19,7 +19,7 @@ $person_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
 //Email Validation
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-$city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
+$city = intval(filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING));
 
 $phone = filter_input(INPUT_POST, "phone", FILTER_SANITIZE_STRING);
 $phone = Tool::remove_non_numeric_characters($phone);
@@ -40,6 +40,7 @@ if ($valid_fields) {
 
     $dataJson = json_encode($dataArray);
 
+    // Qr Code generation
     $qrCodeContent = $dataJson;
     $qrCodeName = uniqid(hash('md5', $qrCodeContent));
     $qrCodePath = '/opt/qrCodes/' . $qrCodeName . '.png';
@@ -48,6 +49,7 @@ if ($valid_fields) {
     // unlink($qrCodePath);
     $base64QrCode = base64_encode($data);
     
+    // Creating full POST Body
     $dataArray['city'] = $city;
     $dataArray['name'] = $person_name;
     $dataArray['mac'] = $client_mac;
@@ -57,9 +59,22 @@ if ($valid_fields) {
 
     // TODO consume WS sending information
 
-    Log::print("Granting access to person:\n\n$dataJson", 'message', __FILE__, __LINE__);
+    $apiUrl = constant('API_URL') . '/exhibition-forms/expo-audi/lead';
+    $apiResponse = Tool::perform_http_request('POST', $apiUrl, $dataJson);
+    
+    if (isset($apiResponse) && array_key_exists('response_code', $apiResponse)){
+        if ($apiResponse['response_code'] == 204){
 
-    require_once(dirname(__FILE__).'/grant_access.php');   
+            Log::print("Granting access to person:\n\n$dataJson", 'message', __FILE__, __LINE__);
+            require_once(dirname(__FILE__).'/grant_access.php');   
+        } else {
+            // There was a response error
+            Log::print("Lead WS responded with Response HTTP Code: " . $apiResponse['response_code'], 'error', __FILE__, __LINE__);
+            Log::print("Lead WS responded with Response Body:\n\n" . $apiResponse['response_body'], 'debug', __FILE__, __LINE__);
+        }
+    } else {
+        // Couldn't consume WS
+        Log::print("Could not consume Lead WS", 'error', __FILE__, __LINE__);
+    }
 }
-
 ?>
