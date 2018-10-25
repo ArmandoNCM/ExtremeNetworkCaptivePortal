@@ -10,7 +10,6 @@ $access_point_mac = $_POST['access_point_mac'];
 $controller_ip = $_POST['controller_ip'];
 $controller_port = $_POST['controller_port'];
 $wlan_identifier = $_POST['wlan_identifier'];
-$seconds_allowed = $_POST['seconds_allowed'];
 
 $valid_fields = TRUE;
 
@@ -48,6 +47,7 @@ if ($valid_fields) {
     $data = file_get_contents($qrCodePath);
     // unlink($qrCodePath);
     $base64QrCode = base64_encode($data);
+    $prefix = 'data:image/png;base64,';
     
     // Creating full POST Body
     $dataArray['city'] = $city;
@@ -58,6 +58,7 @@ if ($valid_fields) {
 
     $dataJson = json_encode($dataArray);
 
+    $base64QrCode = $prefix . $base64QrCode;
     // TODO consume WS sending information
 
     $apiUrl = constant('API_URL') . '/exhibition-forms/expo-audi/lead';
