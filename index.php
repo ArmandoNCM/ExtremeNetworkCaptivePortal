@@ -23,7 +23,7 @@ $browser = $browserData['browser'];
 $platform = $browserData['platform'];
 Log::print("Browser and Platform: $browser & $platform", "info", __FILE__, __LINE__);
 
-if ($platform == 'iOS' || $platform == 'macOS'){
+if ($platform != 'Android'){
     $_GET['chrome'] = 'true';
 }
 
