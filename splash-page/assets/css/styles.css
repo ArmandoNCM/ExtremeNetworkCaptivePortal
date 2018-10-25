@@ -12,13 +12,6 @@ body {
 	height: 150px;
 }
 
-#header-message {
-	color: white;
-	position: relative;
-	bottom: -50%;
-	text-align: center;
-}
-
 #information {
 	text-align: center;
 	font-size: 15px;
