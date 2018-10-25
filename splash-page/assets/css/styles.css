@@ -12,7 +12,7 @@ body {
 	height: 150px;
 }
 
-#header p {
+#header-message {
 	color: white;
 	position: relative;
 	bottom: -50%;
