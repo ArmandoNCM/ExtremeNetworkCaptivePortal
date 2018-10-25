@@ -18,7 +18,7 @@
 	</style>
 </head>
 <body>
-	<h1>Código de acceso rápido</h1>
+	<h1>Fast pass Audi</h1>
 	<img src="<?php echo $base64QrCode ?>">
 
 	<p>

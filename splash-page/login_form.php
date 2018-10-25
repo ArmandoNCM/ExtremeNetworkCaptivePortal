@@ -12,6 +12,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 <body>
 	<div id="header">
 		<img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo-audi.png">
+		<p>Bienvenido a la nueva era de Audi.</p>
 	</div>
 	<div id="information">
 		<span>Red Wi-Fi gratuita</span>

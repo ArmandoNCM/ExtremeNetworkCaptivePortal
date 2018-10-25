@@ -12,6 +12,13 @@ body {
 	height: 150px;
 }
 
+#header p {
+	color: white;
+	position: relative;
+	bottom: -50%;
+	text-align: center;
+}
+
 #information {
 	text-align: center;
 	font-size: 15px;
