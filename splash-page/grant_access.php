@@ -10,8 +10,6 @@ $useHttps = FALSE;
 $assigned_role = NULL;
 $destination = 'http://audi-client.sundevs.cloud/#/'; // 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/qrCodes/' . $qrCodeName . '.png';
 $session_time = 60;
-$controller_ip = '10.159.0.2';
-$controller_port = 80;
 
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $person_email, $wlan_identifier, $assigned_role, $destination, $session_time);
 
