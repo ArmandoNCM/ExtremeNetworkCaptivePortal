@@ -8,7 +8,7 @@ $shared_secret = constant('SHARED_SECRET');
 
 $useHttps = FALSE;
 $assigned_role = NULL;
-$destination = 'http://10.159.0.2/client/#/'; // 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/qrCodes/' . $qrCodeName . '.png';
+$destination = 'http://10.159.0.2/client/#/' . $phone . '/'; // 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/qrCodes/' . $qrCodeName . '.png';
 $session_time = 60;
 
 Log::print('Destination URL: ' . $destination, 'debug', __FILE__, __LINE__);
