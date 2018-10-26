@@ -2,6 +2,7 @@
 require_once(dirname(__FILE__).'/../class/SimpleAWS.php');
 require_once(dirname(__FILE__).'/../class/Log.php');
 require_once(dirname(__FILE__).'/../constants.php');
+require_once(dirname(__FILE__).'/../class/Utils.php');
 
 $identity = constant('IDENTITY');
 $shared_secret = constant('SHARED_SECRET');
@@ -19,6 +20,8 @@ $service = 'ecp';
 $signature_expiration_time = 3600;
 
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
+
+Tool::perform_http_request('GET', $signedUrl);
 
 require_once(dirname(__FILE__).'/success.php');
 
