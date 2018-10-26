@@ -11,6 +11,6 @@ if (isset($external) && $external){
     $destination = 'googlechrome://navigate?url=' . $destination;
 }
 Log::print('Destination URL: ' . $destination, 'debug', __FILE__, __LINE__);
-header('Location: ' . $destination);
 Tool::perform_http_request('GET', $signedUrl);
+header('Location: ' . $destination);
 ?>
