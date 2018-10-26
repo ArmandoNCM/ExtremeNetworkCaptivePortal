@@ -11,7 +11,6 @@ $assigned_role = NULL;
 $destination = 'http://audi-client.sundevs.cloud/#/'; // 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/qrCodes/' . $qrCodeName . '.png';
 $session_time = 60;
 
-Log::print('Destination URL: ' . $destination, 'debug', __FILE__, __LINE__);
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $person_email, $wlan_identifier, $assigned_role, $destination, $session_time);
 
 $region = 'world';
