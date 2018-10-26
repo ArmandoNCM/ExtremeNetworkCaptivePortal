@@ -25,7 +25,14 @@
 		Presenta este código para el ingreso a nuestro pabellón y disfruta de la gran experiencia AUDI que hemos preparado este año para ti. Descubre novedades y conoce más sobre nuestros vehīculos desde tu teléfono móvil.
     </p>
     
-    <a href="<?php echo $destination; ?>">Acceder a Internet</a>
+	<?php
+		if (isset($open_external_browser) && $open_external_browser){
+			$href = 'redirect.php?external=true&signedUrl=' . urlencode($signedUrl);
+		} else {
+			$href = 'redirect.php?signedUrl=' . urlencode($signedUrl);
+		}
+	?>
+    <a href="<?php echo $href; ?>">Acceder a Internet</a>
 	
 </body>
 </html>

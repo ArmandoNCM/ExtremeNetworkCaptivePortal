@@ -43,13 +43,11 @@ $hidden_fields_array = array(
 $html_location_name = 'Trinitip Corferias';
 $html_location_logo_url = '/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png';
 
-if (array_key_exists('chrome', $_GET)){
-    // Opened in Chrome
-    Log::print('YYYYYY', 'debug', __FILE__, __LINE__);
-    require_once(dirname(__FILE__).'/splash-page/login_form.php');
-} else {
+if (!array_key_exists('chrome', $_GET)){
     // Opened in default web view
-    Log::print('NNNNNN', 'debug', __FILE__, __LINE__);
-    header('Location: googlechrome://navigate?url=' . $url);
+    $open_external_browser = TRUE;
+    // header('Location: googlechrome://navigate?url=' . $url);
 }
+
+require_once(dirname(__FILE__).'/splash-page/login_form.php');
 ?>
