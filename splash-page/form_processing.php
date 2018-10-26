@@ -10,6 +10,7 @@ $access_point_mac = $_POST['access_point_mac'];
 $controller_ip = $_POST['controller_ip'];
 $controller_port = $_POST['controller_port'];
 $wlan_identifier = $_POST['wlan_identifier'];
+$open_external_browser = $_POST['open_external_browser'];
 
 $valid_fields = TRUE;
 

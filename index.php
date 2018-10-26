@@ -45,8 +45,7 @@ $html_location_logo_url = '/ExtremeNetworksCaptivePortal/splash-page/assets/imag
 
 if (!array_key_exists('chrome', $_GET)){
     // Opened in default web view
-    $open_external_browser = TRUE;
-    // header('Location: googlechrome://navigate?url=' . $url);
+    $hidden_fields_array['open_external_browser'] = TRUE;
 }
 
 require_once(dirname(__FILE__).'/splash-page/login_form.php');
