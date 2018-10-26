@@ -31,6 +31,7 @@
 		} else {
 			$href = 'redirect.php?signedUrl=' . urlencode($signedUrl);
 		}
+		$href = $href . '&phone=' . $phone;
 	?>
     <a href="<?php echo $href; ?>">Acceder a Internet</a>
 	
