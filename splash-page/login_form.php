@@ -24,19 +24,19 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 		<form action="<?php echo $html_form_process_url ?>" method="post">
 			<div class="form-group">
 				<span>Primer Nombre</span>
-				<input name="first_name" type="text" class="form-control">
+				<input name="first_name" type="text" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<span>Apellido</span>
-				<input name="last_name" type="text" class="form-control">
+				<input name="last_name" type="text" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<span>Correo electrónico</span>
-				<input name="email" type="email" class="form-control">
+				<input name="email" type="email" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<span>Teléfono</span>
-				<input  name="phone" type="tel" class="form-control">
+				<input  name="phone" type="tel" class="form-control" required>
 			</div>
 			<div class="form-group">
 				<span>Ciudad</span>
