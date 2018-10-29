@@ -9,7 +9,7 @@ $shared_secret = constant('SHARED_SECRET');
 $useHttps = FALSE;
 $assigned_role = NULL;
 $destination = NULL; // 'http://audi-client.sundevs.cloud/#/'; // 'http://kenshin.sundevs.cloud/ExtremeNetworksCaptivePortal/qrCodes/' . $qrCodeName . '.png';
-$session_time = 60;
+$session_time = 60 * 10;
 
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $person_email, $wlan_identifier, $assigned_role, $destination, $session_time);
 

@@ -23,8 +23,12 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 	<div id="form-container">
 		<form action="<?php echo $html_form_process_url ?>" method="post">
 			<div class="form-group">
-				<span>Nombre</span>
-				<input name="name" type="text" class="form-control">
+				<span>Primer Nombre</span>
+				<input name="first_name" type="text" class="form-control">
+			</div>
+			<div class="form-group">
+				<span>Apellido</span>
+				<input name="last_name" type="text" class="form-control">
 			</div>
 			<div class="form-group">
 				<span>Correo electrónico</span>

@@ -15,7 +15,8 @@ $open_external_browser = $_POST['open_external_browser'];
 $valid_fields = TRUE;
 
 // TODO Check name and email and in case of error, show form with error and retry
-$person_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
+$person_first_name = filter_input(INPUT_POST, "first_name", FILTER_SANITIZE_STRING);
+$person_last_name = filter_input(INPUT_POST, "last_name", FILTER_SANITIZE_STRING);
 //Email Validation
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
@@ -52,7 +53,8 @@ if ($valid_fields) {
     
     // Creating full POST Body
     $dataArray['city'] = $city;
-    $dataArray['name'] = $person_name;
+    $dataArray['firstname'] = $person_first_name;
+    $dataArray['lastname'] = $person_last_name;
     $dataArray['mac'] = $client_mac;
     $dataArray['qrCode'] = $base64QrCode;
     $dataArray['trafficSource'] = 'captive-portal';
