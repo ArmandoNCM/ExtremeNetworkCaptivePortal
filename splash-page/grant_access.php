@@ -21,6 +21,4 @@ $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secr
 
 require_once(dirname(__FILE__).'/success.php');
 
-exit();
-
 ?>

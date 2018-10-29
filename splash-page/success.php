@@ -16,6 +16,13 @@
 			font-size: 14px;
 		}
 	</style>
+	<script>
+		function openExternalBrowser(){
+				document.getElementById("connect-button").disabled = true;
+				fetch('<?php echo $signedUrl; ?>');
+				window.open("googlechrome://navigate?url=http://10.159.0.2/client/#/<?php echo $phone; ?>");
+		};
+	</script>
 </head>
 <body>
 	<h1>Fast pass Audi</h1>
@@ -25,15 +32,7 @@
 		Presenta este código para el ingreso a nuestro pabellón y disfruta de la gran experiencia AUDI que hemos preparado este año para ti. Descubre novedades y conoce más sobre nuestros vehīculos desde tu teléfono móvil.
     </p>
     
-	<?php
-		if (isset($open_external_browser) && $open_external_browser){
-			$href = 'redirect.php?external=true&signedUrl=' . urlencode($signedUrl);
-		} else {
-			$href = 'redirect.php?signedUrl=' . urlencode($signedUrl);
-		}
-		$href = $href . '&phone=' . $phone;
-	?>
-    <a href="<?php echo $href; ?>">Acceder a Internet</a>
+	<button id="connect-button" onclick="openExternalBrowser()">Acceder a Internet</button>
 	
 </body>
 </html>
