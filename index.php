@@ -23,10 +23,6 @@ $browser = $browserData['browser'];
 $platform = $browserData['platform'];
 Log::print("Browser and Platform: $browser & $platform", "info", __FILE__, __LINE__);
 
-if ($platform != 'Android'){
-    $_GET['chrome'] = 'true';
-}
-
 // Get redirected URL
 $base_url = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']=='on' ? 'https' : 'http' ) . '://' .  $_SERVER['HTTP_HOST'];
 $url = $base_url . $_SERVER["REQUEST_URI"] . '&chrome=true';
@@ -43,8 +39,7 @@ $hidden_fields_array = array(
 $html_location_name = 'Trinitip Corferias';
 $html_location_logo_url = '/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png';
 
-if (!array_key_exists('chrome', $_GET)){
-    // Opened in default web view
+if ($platform == 'Android'){
     $hidden_fields_array['open_external_browser'] = TRUE;
 }
 

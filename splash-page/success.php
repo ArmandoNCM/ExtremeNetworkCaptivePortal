@@ -1,3 +1,10 @@
+<?php
+if ($open_external_browser){
+	$destination = 'googlechrome://navigate?url=http://10.159.0.2/client/#/' . $phone;
+} else {
+	$destination = 'http://10.159.0.2/client/#/' . $phone;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +27,7 @@
 		function openExternalBrowser(){
 				document.getElementById("connect-button").disabled = true;
 				fetch('<?php echo $signedUrl; ?>');
-				window.open("googlechrome://navigate?url=http://10.159.0.2/client/#/<?php echo $phone; ?>");
+				window.open("<?php echo $destination; ?>");
 		};
 	</script>
 </head>
