@@ -20,7 +20,7 @@ $person_last_name = filter_input(INPUT_POST, "last_name", FILTER_SANITIZE_STRING
 //Email Validation
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-$city = intval(filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING));
+$city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
 
 $phone = filter_input(INPUT_POST, "phone", FILTER_SANITIZE_STRING);
 $phone = Tool::remove_non_numeric_characters($phone);

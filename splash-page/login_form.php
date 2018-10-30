@@ -41,8 +41,8 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 			<div class="form-group">
 				<span>Ciudad</span>
 				<select name="city" name="" id="" class="select-cities">
-					<option value="1">Bogotá</option>
-					<option value="2">Medellín</option>
+					<option value="Bogotá">Bogotá</option>
+					<option value="Medellín">Medellín</option>
 				</select>
 			</div>
 
