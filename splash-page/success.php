@@ -1,8 +1,8 @@
 <?php
 if ($open_external_browser){
-	$destination = 'googlechrome://navigate?url=http://10.159.0.2/client/#/' . $phone;
+	$destination = 'googlechrome://navigate?url=https://audi-client.sundevs.cloud/#/' . $phone;
 } else {
-	$destination = 'http://10.159.0.2/client/#/' . $phone;
+	$destination = 'https://audi-client.sundevs.cloud/#/' . $phone;
 }
 ?>
 <!DOCTYPE html>
