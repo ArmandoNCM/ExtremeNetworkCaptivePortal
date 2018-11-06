@@ -45,7 +45,7 @@ if ($valid_fields) {
     $qrCodeContent = $dataJson;
     $qrCodeName = uniqid(hash('md5', $qrCodeContent));
     $qrCodePath = '/opt/qrCodes/' . $qrCodeName . '.png';
-    QRcode::png($qrCodeContent, $qrCodePath); 
+    QRcode::png($qrCodeContent, $qrCodePath, QR_ECLEVEL_Q, 8); 
     $data = file_get_contents($qrCodePath);
     // unlink($qrCodePath);
     $base64QrCode = base64_encode($data);
