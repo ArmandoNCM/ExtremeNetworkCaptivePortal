@@ -17,7 +17,7 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 	<div id="information">
 		<span>Red Wi-Fi gratuita</span>
 		<span>Completa el formulario y recibe contenido</span>
-		<span>exclusivo de nuestra marca</span>
+		<span>exclusivo de nuestra marca.</span>
 	</div>
 
 	<div id="form-container">
