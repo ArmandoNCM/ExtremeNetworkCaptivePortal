@@ -57,15 +57,34 @@ $html_form_process_url = '/ExtremeNetworksCaptivePortal/splash-page/form_process
 	</div>
     <p id="terms">Al registrarte, aceptas nuestros <a href="#tos">Términos y condiciones</a></p>
     
-    <p id="tos">
-
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi ornare orci et purus dignissim finibus. Mauris facilisis eros quam, quis laoreet nibh porta eu. Nullam lacinia mattis sollicitudin. Ut lobortis tellus ultricies iaculis suscipit. Sed nec scelerisque turpis, vitae mollis neque. Sed dictum mauris quis quam congue ullamcorper. Aliquam vitae vehicula dui. Quisque nec molestie dui, nec rhoncus purus.
+    <div id="tos">
+	
+        <h2>Términos y condiciones</h2>
         <br>
+        <h3>Aviso Legal</h3>
+        Este Sitio Web y las páginas que lo componen han sido diseñadas y creadas para Porsche Colombia S.A.S., distribuidor exclusivo de Audi para la República de Colombia.
         <br>
-        Vestibulum sit amet volutpat odio. Vivamus vestibulum lectus fermentum, scelerisque nulla ut, volutpat ante. Nunc accumsan finibus orci at auctor. Aliquam erat volutpat. Aenean in metus eget lectus vulputate maximus id nec velit. Praesent faucibus nisl sit amet eros suscipit tempor. Duis molestie scelerisque augue nec faucibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec hendrerit augue placerat odio commodo, nec dictum orci fermentum. Sed id leo pharetra, volutpat nunc eu, auctor ligula.
+        Términos y condiciones
+        Al acceso y/o uso de este Sitio Web, usted está consintiendo a aceptar que reconoce haber leído y entendido estos Términos y Condiciones y estar de acuerdo con su contenido conforme a la ley colombiana. El uso de cualquier servicio proveído en este Sitio Web, está sujeto a los términos y condiciones aplicables a dicho servicio. Si usted no está de acuerdo con estos términos y condiciones, por favor absténgase de utilizar este Sitio Web.
         <br>
+        <h3>Derechos de autor y Propiedad Intelectual</h3>
+        Audi AG y Porsche Colombia S.A.S. se reservan todos los derechos de autor y de propiedad industrial. Este Sitio Web, su diseño y los textos, imágenes, gráficos, sonidos, animaciones y videos, y las marcas, logotipos, lemas, slogans y nombres comerciales, son la propiedad intelectual e industrial de Audi AG y/o Porsche Colombia S.A.S. Esta prohibida su reproducción, difusión o distribución para uso comercial, y su contenido no puede ser descargado, modificado, copiado, fijado, insertado o transmitido para fines publicitarios o comerciales. En consecuencia, en ningún evento se otorgará licencia alguna sobre la propiedad intelectual o industrial de Audi AG y/o Porsche Colombia S.A.S. a través de este Sitio Web. Algunas páginas de éste Sitio Web pueden contener material cuyo derecho de autor o propiedad intelectual o industrial pertenezca a terceros.
         <br>
-        Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In diam libero, scelerisque placerat vulputate in, mollis eget nisi. Nunc laoreet ante est, et porta sapien volutpat ut. Nunc eu purus maximus, finibus eros sed, dignissim erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque eget finibus elit. Ut in dolor sit amet lectus consequat faucibus vitae at elit. Donec laoreet ante vitae augue imperdiet fermentum. Etiam consequat lorem a nisi tincidunt, sed vehicula enim tempus.
-    </p>
+        <h3>Información sobre los productos Volkswagen</h3>
+        Toda la información, especificaciones e ilustraciones contenidas en este Sitio Web corresponden a la última actualización disponible al momento de su publicación, por lo que posteriormente pueden haberse producido cambios en relación a los datos que contiene. Los vehículos, equipamientos, equipos opcionales, accesorios, productos y servicios exhibidos o detallados en el Sitio Web, están sujetos a su disponibilidad en la República de Colombia, y pueden no corresponder al equipamiento de serie. Audi AG y/o Porsche Colombia S.A.S. se reservan el derecho de modificar los diseños, los modelos, las especificaciones, los materiales, los equipamientos y los colores en cualquier momento, advirtiendo que dichos cambios pueden incidir sobre los precios, las características o los detalles de los vehículos de Audi AG.
+        <br>
+        <h3>Garantías de contenido-limitación de responsabilidad</h3>
+        Todo el contenido del Sitio Web se ofrece a título meramente informativo e indicativo, procurando que sea lo más preciso, fiel y actual posible, pero sin incluir ningún tipo de garantía, ya sea expresa o implícita. 
+        <br>
+        La información sobre los modelos y sus características corresponden a los definidos al momento de su publicación o puesta en línea, o el de sus correspondientes actualizaciones, y no debe considerarse como una oferta comercial o contractual de productos o servicios de Audi AG y/o Porsche Colombia S.A.S. o de sus concesionarios. 
+        <br>
+        En particular, no constituye una garantía tácita o implícita respecto de las características, especificaciones o comerciabilidad de productos, su idoneidad para determinado uso, su adecuación para un propósito particular, el cumplimiento de leyes o la observancia de patentes. 
+        <br>
+        Audi AG y/o Porsche Colombia S.A.S. no garantizan que las funciones técnicas y de operación del Sitio Web se presenten sin interrupciones o libres de errores, de que dichos defectos sean corregidos, o que este Sitio Web o el servidor que lo hace disponible al público estén libres de virus u otros componentes dañosos. Bajo ninguna circunstancia, Audi AG y/o Porsche Colombia S.A.S. podrán ser obligadas a responder por cualquier clase de daño o perjuicio que resulte del uso del Sitio Web y su contenido. 
+        <br>
+        El Sitio Web puede a su vez incluir enlaces, vínculos o links a sitios Web externos, cuyos contenidos y diseño son ajenos al control de Audi AG y/o Porsche Colombia S.A.S. En ningún caso nos hacemos responsables por su contenido, actualidad, exactitud o calidad, como que tampoco debe entenderse como el apoyo o la promoción de los productos y/o servicios de terceros, entendiendo que usted emplea el Sitio Web bajo su responsabilidad y dispone de la autonomía y discrecionalidad para decidir respecto de su utilización. Audi AG y/o Porsche Colombia S.A.S. no asumen ninguna responsabilidad por los perjuicios y/o daños directos o indirectos, ciertos o eventuales, pasados, presentes o futuros, pérdida de datos, pérdida de programa o lucro cesante, que resulte del acceso o de la utilización de este Sitio Web o de cualquier sitio Web al que esté vinculado.
+        <br>
+        Audi AG y/o Porsche Colombia S.A.S. no se hacen responsables por omisiones o errores tipográficos y se reservan el derecho de actualizar, modificar o suprimir el contenido y acceso al Sitio Web y de revisar estos Términos y Condiciones en cualquier momento.
+    </div>
 </body>
 </html>

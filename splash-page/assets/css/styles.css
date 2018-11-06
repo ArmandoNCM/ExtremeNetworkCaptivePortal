@@ -77,7 +77,11 @@ body {
 }
 
 #tos {
+	margin: auto;
 	margin-top: 50px;
+	display: block;
+	width: 90%;
 	font-size: 12px;
 	padding: 10px;
+	text-align: justify;
 }
