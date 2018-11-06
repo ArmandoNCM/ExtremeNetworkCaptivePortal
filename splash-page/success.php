@@ -32,7 +32,7 @@ if ($open_external_browser){
 	</script>
 </head>
 <body>
-	<h1>Fast pass Audi</h1>
+	<h1>Audi FastPass</h1>
 	<img src="<?php echo $base64QrCode ?>">
 
 	<p>
