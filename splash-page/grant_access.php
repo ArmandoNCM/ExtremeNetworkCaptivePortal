@@ -7,7 +7,7 @@ $shared_secret = constant('SHARED_SECRET');
 
 $useHttps = FALSE;
 $assigned_role = NULL;
-$destination = "https://www.tarjetajoven.com/";
+$destination = "http://www.cundinamarca.gov.co/";
 $session_time = 3600 * 24;
 
 $unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlan_identifier, $assigned_role, $destination, $session_time);
@@ -17,7 +17,7 @@ $service = 'ecp';
 $signature_expiration_time = 30;
 
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
-
+Log::print("Attempting to Authenticate with Signed URL:\n\n\n--->   $signedUrl   <---", "info", __FILE__, __LINE__);
 header('Location: '.$signedUrl);
 
 exit();
