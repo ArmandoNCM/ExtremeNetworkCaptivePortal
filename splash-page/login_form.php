@@ -58,9 +58,9 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
         <form method="post" onsubmit="disableButton()" action="<?php echo $html_form_process_url ?>">
             <input name="name" type="text" class="form-control" placeholder="Nombre y apellidos" required>
             <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
-            <input name="age" type="number" class="form-control" placeholder="Edad" required>
-<!--            <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control"-->
-<!--                   placeholder="Fecha de nacimiento" required readonly>-->
+            <input name="age" type="number" class="form-control" placeholder="Edad" required min="1" step="1">
+            <!--            <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control"-->
+            <!--                   placeholder="Fecha de nacimiento" required readonly>-->
 
             <select id="select-state" name="state" onchange="getCity(this.value)" class="form-control" required>
                 <?php
