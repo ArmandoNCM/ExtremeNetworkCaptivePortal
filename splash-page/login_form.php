@@ -52,7 +52,8 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
 </head>
 <body>
 <div id="container">
-    <img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/header.png" id="logo">
+    <img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/header.jpg" id="logo"
+         style="max-width:50%;max-height:50%;">
     <h1>Conéctate y disfruta de nuestra red wifi gratis </h1>
     <div class="form-container col-5">
         <form method="post" onsubmit="disableButton()" action="<?php echo $html_form_process_url ?>">
