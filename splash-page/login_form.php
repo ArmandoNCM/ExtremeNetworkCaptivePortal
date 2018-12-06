@@ -52,18 +52,16 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
 </head>
 <body>
 <div id="container">
-    <img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/logo.png" id="logo">
+    <img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/header.png" id="logo">
+    <h1>Conéctate y disfruta de nuestra red wifi gratis </h1>
     <div class="form-container col-5">
-        <h1>Bienvenido</h1>
-        <p class="information">Conéctate gratis a nuestra red Wi-Fi en 4 simples pasos</p>
-
         <form method="post" onsubmit="disableButton()" action="<?php echo $html_form_process_url ?>">
             <input name="name" type="text" class="form-control" placeholder="Nombre y apellidos" required>
             <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
             <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control"
                    placeholder="Fecha de nacimiento" required readonly>
 
-            <select id="select-state" name="state" onchange="getCity(this.value)" required>
+            <select id="select-state" name="state" onchange="getCity(this.value)" class="form-control" required>
                 <?php
                 foreach ($jsonStates as $key => $value) {
                     $name = $value["departamento"];
@@ -73,10 +71,10 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
                 ?>
             </select>
 
-            <select id="select-city" name="city" required>
+            <select id="select-city" name="city" class="form-control" required>
             </select>
 
-            <input id="submit-button" type="submit" class="btn btn-blue">
+            <input id="submit-button" type="submit" class="btn btn-blue" placeholder="Registrarse">
 
             <?php
             foreach ($hidden_fields_array as $key => $value) {
@@ -90,6 +88,7 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
             </div>
         </form>
     </div>
+    <img src="/ExtremeNetworksCaptivePortal/splash-page/assets/images/footer.png" id="footer">
 </div>
 </body>
 </html>
