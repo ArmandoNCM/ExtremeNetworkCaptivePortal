@@ -1,8 +1,8 @@
 <?php
-require_once(dirname(__FILE__).'/../class/Log.php');
-require_once(dirname(__FILE__).'/../class/Utils.php');
-require_once(dirname(__FILE__).'/../class/SimpleAWS.php');
-require_once(dirname(__FILE__).'/../constants.php');
+require_once(dirname(__FILE__) . '/../class/Log.php');
+require_once(dirname(__FILE__) . '/../class/Utils.php');
+require_once(dirname(__FILE__) . '/../class/SimpleAWS.php');
+require_once(dirname(__FILE__) . '/../constants.php');
 
 $token = $_POST['token'];
 $client_mac = $_POST['client_mac'];
@@ -12,7 +12,7 @@ $controller_port = $_POST['controller_port'];
 $wlan_identifier = $_POST['wlan_identifier'];
 $seconds_allowed = $_POST['seconds_allowed'];
 
-$apiUrl = constant('API_URL') . '/exhibition-forms/expo-students/exists/' . $client_mac;
+$apiUrl = constant('API_URL') . '/exhibition-forms/expo-cund/exists/' . $client_mac;
 $apiResponse = Tool::perform_http_request('GET', $apiUrl);
 
 $alreadyRegistered = (isset($apiResponse) && array_key_exists('response_code', $apiResponse) && $apiResponse['response_code'] == 204);
@@ -30,10 +30,12 @@ $person_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
 $birthdate = filter_input(INPUT_POST, "birthdate", FILTER_SANITIZE_STRING);
+$state = filter_input(INPUT_POST, "state", FILTER_SANITIZE_STRING);
+$city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
 $identification_document = filter_input(INPUT_POST, "id_number", FILTER_SANITIZE_STRING);
 $identification_document = Tool::remove_non_numeric_characters($identification_document);
 
-if ($person_email){
+if ($person_email) {
     strtolower(trim($person_email));
 } else {
     Log::print("Error in the email validation.", "error", __FILE__, __LINE__);
@@ -44,7 +46,8 @@ if ($valid_fields) {
 
     $bodyArray = array(
         'mac' => $client_mac,
-        'idNumber' => $identification_document,
+        'state' => $state,
+        'city' => $city,
         'name' => $person_name,
         'email' => $person_email,
         'dob' => $birthdate
@@ -52,12 +55,12 @@ if ($valid_fields) {
 
     $bodyJson = json_encode($bodyArray);
 
-    $apiUrl = constant('API_URL') . '/exhibition-forms/expo-students';
+    $apiUrl = constant('API_URL') . '/exhibition-forms/expo-cund';
     $apiResponse = Tool::perform_http_request('POST', $apiUrl, $bodyJson);
-    
-    if (isset($apiResponse) && array_key_exists('response_code', $apiResponse)){
 
-        if ($apiResponse['response_code'] == 201){
+    if (isset($apiResponse) && array_key_exists('response_code', $apiResponse)) {
+
+        if ($apiResponse['response_code'] == 201) {
             // Registry successful
             Log::print("Successfully registered person on device with mac: $client_mac", 'message', __FILE__, __LINE__);
         } else {
@@ -70,7 +73,7 @@ if ($valid_fields) {
         Log::print("The person registry API could not be consumed", 'error', __FILE__, __LINE__);
     }
 
-    require_once(dirname(__FILE__).'/grant_access.php');   
+    require_once(dirname(__FILE__) . '/grant_access.php');
 }
 
 ?>
