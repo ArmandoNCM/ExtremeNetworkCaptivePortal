@@ -43,6 +43,10 @@
     margin-bottom: 20px;
 }
 
+p {
+    text-align: justify;
+}
+
 .form-control {
     width: 90%;
     height: 35px;

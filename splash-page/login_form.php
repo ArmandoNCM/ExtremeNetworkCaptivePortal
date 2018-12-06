@@ -83,8 +83,12 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
             ?>
 
             <div id="terms" align="center">
-                <input type="checkbox" id="btn-terms" required> <label for="btn-terms">Acepto términos, condiciones, y
-                    políticas de privacidad</label>
+                <input type="checkbox" id="btn-terms" required>
+                <label for="btn-terms">
+                    <a href="/ExtremeNetworksCaptivePortal/splash-page/terms_conditions.html" target="_blank" style="color: white">Acepto
+                        Términos, condiciones, y
+                        políticas de privacidad</a>
+                </label>
             </div>
         </form>
     </div>
