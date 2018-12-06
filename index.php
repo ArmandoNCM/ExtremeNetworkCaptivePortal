@@ -54,7 +54,8 @@ $alreadyRegistered = (isset($apiResponse) && array_key_exists('response_code', $
 if (isset($alreadyRegistered) && $alreadyRegistered) {
     // Log::print("New Login attempt by the person device with mac: $client_mac BLOCKED", "message", __FILE__, __LINE__);
     // header('Location: /ExtremeNetworksCaptivePortal/splash-page/out_of_order.html');
-    require_once(dirname(__FILE__) . '/grant_access.php');
+    require_once(dirname(__FILE__) . '/splash-page/grant_access.php');
+    header('Location: http://www.cundinamarca.gov.co');
     exit();
 } else {
     require_once(dirname(__FILE__).'/splash-page/login_form.php');
