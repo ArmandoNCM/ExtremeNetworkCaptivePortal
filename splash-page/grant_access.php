@@ -17,7 +17,7 @@ $service = 'ecp';
 $signature_expiration_time = 30;
 
 $signedUrl = SimpleAWS::createPresignedUrl($unsignedUrl, $identity, $shared_secret, $region, $service, $signature_expiration_time);
-
+Log::print("Attempting to Authenticate with Signed URL:\n\n\n--->   $signedUrl   <---", "info", __FILE__, __LINE__);
 header('Location: '.$signedUrl);
 
 exit();
