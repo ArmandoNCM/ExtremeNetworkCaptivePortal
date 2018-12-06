@@ -15,20 +15,20 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
     <script type="text/javascript" src="/ExtremeNetworksCaptivePortal/splash-page/assets/js/anypicker.js"></script>
     <script type="text/javascript">
 
-        function setInitialDate() {
-            var pickerObject;
-            $("#birthdate-input").AnyPicker({
-                onInit: function () {
-                    pickerObject = this;
-                },
-                mode: "datetime",
-                dateTimeFormat: "yyyy-MM-dd",
-                minValue: new Date(1940, 00, 01),
-                maxValue: new Date(2010, 11, 31),
-                selectedDate: new Date(2000, 00, 30)
-            });
-            pickerObject.showOrHidePicker();
-        };
+        // function setInitialDate() {
+        //     var pickerObject;
+        //     $("#birthdate-input").AnyPicker({
+        //         onInit: function () {
+        //             pickerObject = this;
+        //         },
+        //         mode: "datetime",
+        //         dateTimeFormat: "yyyy-MM-dd",
+        //         minValue: new Date(1940, 00, 01),
+        //         maxValue: new Date(2010, 11, 31),
+        //         selectedDate: new Date(2000, 00, 30)
+        //     });
+        //     pickerObject.showOrHidePicker();
+        // };
 
         function disableButton() {
             document.getElementById("submit-button").disabled = true;
@@ -46,7 +46,7 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
         }
 
         $(document).ready(function () {
-            getCity("<?php echo $jsonStates[0]["departamento"]?>");
+            getCity("Cundinamarca");
         });
     </script>
 </head>
@@ -58,15 +58,19 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
         <form method="post" onsubmit="disableButton()" action="<?php echo $html_form_process_url ?>">
             <input name="name" type="text" class="form-control" placeholder="Nombre y apellidos" required>
             <input name="email" type="email" class="form-control" placeholder="Correo electrónico" required>
-            <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control"
-                   placeholder="Fecha de nacimiento" required readonly>
+            <input name="age" type="number" class="form-control" placeholder="Edad" required>
+<!--            <input id="birthdate-input" onclick="setInitialDate()" name="birthdate" type="text" class="form-control"-->
+<!--                   placeholder="Fecha de nacimiento" required readonly>-->
 
             <select id="select-state" name="state" onchange="getCity(this.value)" class="form-control" required>
                 <?php
                 foreach ($jsonStates as $key => $value) {
                     $name = $value["departamento"];
-
-                    echo "<option value='$name'>$name</option>";
+                    if ($name == 'Cundinamarca') {
+                        echo "<option value='$name' selected>$name</option>";
+                    } else {
+                        echo "<option value='$name'>$name</option>";
+                    }
                 }
                 ?>
             </select>
@@ -85,7 +89,8 @@ $jsonStates = json_decode(file_get_contents(dirname(__FILE__) . '/assets/states.
             <div id="terms" align="center">
                 <input type="checkbox" id="btn-terms" required>
                 <label for="btn-terms">
-                    <a href="/ExtremeNetworksCaptivePortal/splash-page/terms_conditions.html" target="_blank" style="color: white">Acepto
+                    <a href="/ExtremeNetworksCaptivePortal/splash-page/terms_conditions.html" target="_blank"
+                       style="color: white">Acepto
                         Términos, condiciones, y
                         políticas de privacidad</a>
                 </label>

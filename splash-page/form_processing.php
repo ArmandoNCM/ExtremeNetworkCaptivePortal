@@ -29,7 +29,8 @@ $person_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
 //Email Validation
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-$birthdate = filter_input(INPUT_POST, "birthdate", FILTER_SANITIZE_STRING);
+//$birthdate = filter_input(INPUT_POST, "birthdate", FILTER_SANITIZE_STRING);
+$age = filter_input(INPUT_POST, "age", FILTER_SANITIZE_STRING);
 $state = filter_input(INPUT_POST, "state", FILTER_SANITIZE_STRING);
 $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
 $identification_document = filter_input(INPUT_POST, "id_number", FILTER_SANITIZE_STRING);
@@ -50,7 +51,7 @@ if ($valid_fields) {
         'city' => $city,
         'name' => $person_name,
         'email' => $person_email,
-        'dob' => $birthdate
+        'age' => $age
     );
 
     $bodyJson = json_encode($bodyArray);
