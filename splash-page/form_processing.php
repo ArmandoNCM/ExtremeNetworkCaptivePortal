@@ -11,6 +11,7 @@ $controller_ip = $_POST['controller_ip'];
 $controller_port = $_POST['controller_port'];
 $wlan_identifier = $_POST['wlan_identifier'];
 $seconds_allowed = $_POST['seconds_allowed'];
+$open_external_browser = $_POST['open_external_browser'];
 
 // $apiUrl = constant('API_URL') . '/exhibition-forms/expo-cund/exists/' . $client_mac;
 // $apiResponse = Tool::perform_http_request('GET', $apiUrl);
@@ -29,8 +30,8 @@ $person_name = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
 //Email Validation
 $person_email = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
-//$birthdate = filter_input(INPUT_POST, "birthdate", FILTER_SANITIZE_STRING);
 $age = filter_input(INPUT_POST, "age", FILTER_SANITIZE_STRING);
+$age = Tool::remove_non_numeric_characters($age);
 $state = filter_input(INPUT_POST, "state", FILTER_SANITIZE_STRING);
 $city = filter_input(INPUT_POST, "city", FILTER_SANITIZE_STRING);
 $identification_document = filter_input(INPUT_POST, "id_number", FILTER_SANITIZE_STRING);
