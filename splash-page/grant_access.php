@@ -32,8 +32,8 @@ Log::print("Attempting to Authenticate with Signed URL:\n\n\n--->   $signedUrl  
     <meta charset="utf-8" />
     <script>
         window.onload = function() {
-            fetch("<?php $signedUrl ?>");
-            window.open("<?php $destination ?>");
+            fetch("<?php echo $signedUrl ?>");
+            window.open("<?php echo $destination ?>");
         }
     </script>
 </head>
