@@ -15,7 +15,7 @@ $useHttps = FALSE;
 $assigned_role = NULL;
 $session_time = 3600 * 24;
 
-$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, $username, $wlan_identifier, $assigned_role, $destination, $session_time);
+$unsignedUrl = SimpleAWS::makeUnsignedUrl($controller_ip, $controller_port, $useHttps, $token, '', $wlan_identifier, $assigned_role, $destination, $session_time);
 
 $region = 'world';
 $service = 'ecp';
